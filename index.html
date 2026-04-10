@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henry's 4th Birthday 🐷</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6b3fa0;
+  --purple-dk:#4a2770;
+  --purple-lt:#9b6fd0;
+  --purple-pale:#f3eeff;
+  --purple-mid:#7e52b8;
+  --yellow:#ffd93d;
+  --pink:#ff6eb4;
+  --green:#5ec97e;
+  --blue:#4fb3e8;
+  --white:#fff;
+  --text:#2d1a4a;
+  --muted:#7a5fa0;
+  --border:#d4b8f0;
+  --card:#faf5ff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;
+  background:var(--purple-pale);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ── HERO ── */
+#hero{
+background:var(–purple);
+position:relative;
+overflow:hidden;
+padding:0 0 0 0;
+}
+.hero-peppa-bg{
+width:100%;
+display:block;
+max-height:420px;
+object-fit:cover;
+object-position:center top;
+opacity:.92;
+}
+.hero-overlay{
+position:absolute;
+bottom:0;left:0;right:0;
+background:linear-gradient(transparent 0%, var(–purple) 70%);
+height:60%;
+}
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+padding:0 24px 48px;
+margin-top:-60px;
+}
+.hero-photo-wrap{
+width:150px;height:150px;
+border-radius:50%;
+border:5px solid white;
+box-shadow:0 0 0 4px var(–purple-lt), 0 12px 40px rgba(0,0,0,.3);
+overflow:hidden;
+margin:0 auto 20px;
+background:var(–purple-lt);
+}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-tag{
+background:var(–yellow);
+color:var(–purple-dk);
+font-family:‘Nunito’,sans-serif;
+font-weight:900;
+font-size:12px;
+padding:5px 18px;
+border-radius:20px;
+text-transform:uppercase;
+letter-spacing:.6px;
+display:inline-block;
+margin-bottom:14px;
+}
+#hero h1{
+font-family:‘Nunito’,sans-serif;
+font-weight:900;
+font-size:clamp(2rem,8vw,3.2rem);
+color:white;
+text-shadow:0 3px 12px rgba(0,0,0,.25);
+line-height:1.1;
+margin-bottom:10px;
+}
+#hero .subtitle{
+color:rgba(255,255,255,.85);
+font-size:clamp(.95rem,3vw,1.15rem);
+font-weight:600;
+}
+
+/* ── WAVY DIVIDER ── */
+.wave{display:block;width:100%;line-height:0}
+.wave svg{display:block;width:100%}
+
+/* ── SECTIONS ── */
+.section{padding:52px 24px}
+.section-inner{max-width:660px;margin:0 auto}
+.section-title{
+font-family:‘Nunito’,sans-serif;
+font-weight:900;
+font-size:clamp(1.3rem,4vw,1.8rem);
+color:var(–purple-dk);
+margin-bottom:4px;
+display:flex;align-items:center;gap:10px;
+}
+.section-sub{color:var(–muted);font-size:13.5px;margin-bottom:28px}
+
+/* ── DETAIL CARD ── */
+.detail-card{
+background:white;
+border-radius:24px;
+padding:8px 24px;
+box-shadow:0 4px 24px rgba(107,63,160,.1);
+border:2px solid var(–border);
+}
+.detail-row{
+display:flex;align-items:flex-start;gap:14px;
+padding:14px 0;
+border-bottom:1.5px dashed var(–border);
+}
+.detail-row:last-child{border-bottom:none}
+.d-icon{font-size:20px;width:32px;text-align:center;flex-shrink:0;margin-top:2px}
+.d-label{font-family:‘Nunito’,sans-serif;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(–purple-lt);margin-bottom:2px}
+.d-val{font-size:15px;font-weight:600;color:var(–text)}
+.d-note{font-size:12.5px;color:var(–muted);margin-top:2px;font-style:italic}
+.d-link{display:inline-block;margin-top:5px;font-size:13px;color:var(–purple-mid);font-weight:700;text-decoration:none}
+
+/* ── FOOD PILLS ── */
+.pill-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{
+background:var(–purple-pale);
+border:1.5px solid var(–border);
+border-radius:20px;
+padding:5px 13px;
+font-size:13px;font-weight:600;
+color:var(–purple-dk);
+display:flex;align-items:center;gap:5px;
+}
+
+/* ── REMINDERS ── */
+.reminder-list{display:flex;flex-direction:column;gap:12px}
+.reminder-item{
+background:white;
+border-radius:16px;
+padding:14px 18px;
+display:flex;gap:12px;align-items:flex-start;
+box-shadow:0 2px 12px rgba(107,63,160,.07);
+border-left:4px solid var(–purple-lt);
+}
+.r-icon{
+font-size:20px;width:38px;height:38px;
+background:var(–purple-pale);
+border-radius:10px;
+display:flex;align-items:center;justify-content:center;
+flex-shrink:0;
+}
+.r-text strong{font-family:‘Nunito’,sans-serif;font-weight:800;display:block;margin-bottom:2px;color:var(–text)}
+.r-text span{font-size:13.5px;color:var(–muted)}
+.r-text a{color:var(–purple-mid);font-weight:700}
+
+/* ── RSVP ── */
+#rsvp{background:linear-gradient(180deg,var(–purple-pale) 0%,white 100%)}
+.rsvp-card{
+background:white;
+border-radius:28px;
+padding:36px 30px;
+box-shadow:0 8px 40px rgba(107,63,160,.13);
+border:2px solid var(–border);
+position:relative;overflow:hidden;
+}
+.rsvp-card::before{content:‘🐷’;position:absolute;right:22px;top:18px;font-size:52px;opacity:.07}
+
+label{
+display:block;
+font-family:‘Nunito’,sans-serif;font-weight:800;font-size:12px;
+text-transform:uppercase;letter-spacing:.5px;
+color:var(–purple-dk);margin-bottom:7px;
+}
+.form-group{margin-bottom:20px}
+input,select,textarea{
+width:100%;padding:12px 16px;
+border:2px solid var(–border);border-radius:12px;
+font-family:‘Nunito Sans’,sans-serif;font-size:15px;color:var(–text);
+background:var(–purple-pale);
+transition:border-color .2s,box-shadow .2s;outline:none;
+}
+input:focus,select:focus,textarea:focus{
+border-color:var(–purple-mid);
+box-shadow:0 0 0 3px rgba(107,63,160,.15);
+background:white;
+}
+textarea{resize:vertical;min-height:80px}
+
+/* Attendance */
+.attendance-toggle{display:flex;gap:10px;margin-top:4px}
+.att-btn{
+flex:1;padding:11px;
+border:2px solid var(–border);border-radius:12px;
+background:var(–purple-pale);
+font-family:‘Nunito’,sans-serif;font-weight:800;font-size:14px;
+color:var(–muted);cursor:pointer;transition:all .2s;text-align:center;
+}
+.att-btn.active-yes{background:var(–purple);border-color:var(–purple);color:white}
+.att-btn.active-no{background:#e84545;border-color:#e84545;color:white}
+
+/* Guest count */
+.count-section{margin-bottom:20px}
+.count-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:480px){.count-grid{grid-template-columns:1fr}}
+.count-box{
+background:var(–purple-pale);
+border:2px solid var(–border);border-radius:16px;
+padding:14px 10px;text-align:center;
+}
+.count-box .cb-label{
+font-family:‘Nunito’,sans-serif;font-weight:800;font-size:13px;
+color:var(–purple-dk);margin-bottom:10px;
+}
+.count-box .cb-emoji{font-size:22px;display:block;margin-bottom:4px}
+.count-ctrl{display:flex;align-items:center;justify-content:center;gap:0;
+border:2px solid var(–border);border-radius:10px;overflow:hidden;background:white}
+.count-ctrl button{
+background:none;border:none;width:36px;height:38px;
+font-size:18px;font-weight:900;color:var(–purple-dk);cursor:pointer;
+transition:background .15s;flex-shrink:0;
+}
+.count-ctrl button:hover{background:var(–purple-pale)}
+.count-ctrl input{
+border:none;border-radius:0;text-align:center;
+font-family:‘Nunito’,sans-serif;font-weight:900;font-size:16px;
+background:transparent;padding:8px 2px;width:100%;
+}
+.count-ctrl input:focus{box-shadow:none;background:transparent}
+
+/* Submit */
+.submit-btn{
+width:100%;padding:16px;
+background:linear-gradient(135deg,var(–purple-mid) 0%,var(–purple-dk) 100%);
+color:white;font-family:‘Nunito’,sans-serif;font-weight:900;font-size:17px;
+border:none;border-radius:16px;cursor:pointer;
+box-shadow:0 6px 20px rgba(74,39,112,.3);
+transition:transform .2s,box-shadow .2s;margin-top:8px;
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(74,39,112,.4)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+#form-error{
+display:none;color:#c0392b;font-size:13.5px;font-weight:700;
+margin-bottom:12px;padding:10px 14px;
+background:#ffe0e0;border-radius:10px;
+}
+#rsvp-success{display:none;text-align:center;padding:28px 16px}
+#rsvp-success .big{font-size:52px;margin-bottom:12px}
+#rsvp-success h3{font-family:‘Nunito’,sans-serif;font-weight:900;font-size:22px;color:var(–purple-dk);margin-bottom:8px}
+#rsvp-success p{color:var(–muted)}
+
+/* ── BG ALTERNATION ── */
+.bg-white{background:white}
+.bg-purple{background:linear-gradient(135deg,var(–purple-pale) 0%,#e8d8ff 100%)}
+
+/* ── FOOTER ── */
+footer{
+background:var(–purple-dk);color:rgba(255,255,255,.75);
+text-align:center;padding:36px 24px;font-size:13px;
+}
+footer strong{color:white;font-family:‘Nunito’,sans-serif}
+footer a{color:var(–yellow);text-decoration:none}
+.footer-emojis{font-size:26px;margin-bottom:12px}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── CONFETTI DOTS (decorative) ── */
+.dots-bg{position:relative}
+.dots-bg::after{
+content:’’;position:absolute;inset:0;
+background-image:radial-gradient(circle,rgba(107,63,160,.08) 1.5px,transparent 1.5px);
+background-size:22px 22px;
+pointer-events:none;z-index:0;
+}
+.dots-bg>.section-inner{position:relative;z-index:1}
+</style>
+
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+
+<section id="hero">
+  <!-- Peppa party image as background banner -->
+  <div style="position:relative">
+    <img class="hero-peppa-bg"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+      id="peppa-banner"
+      alt="Peppa Pig Time to Party"
+      style="background:var(--purple);min-height:280px">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <!-- Henry's photo -->
+    <div class="hero-photo-wrap">
+      <img id="henry-photo"
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        alt="Henry">
+    </div>
+    <div class="hero-tag">🎉 You're Invited!</div>
+    <h1>Henry's<br>4th Birthday!</h1>
+    <p class="subtitle">Thursday, May 7 · 3:20 – 5:20 PM</p>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--purple)">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48">
+    <path d="M0,24 Q360,48 720,24 Q1080,0 1440,24 L1440,48 L0,48Z" fill="var(--purple-pale)"/>
+  </svg>
+</div>
+
+<!-- ═══════════════ DETAILS ═══════════════ -->
+
+<section class="section bg-purple dots-bg reveal">
+  <div class="section-inner">
+    <div class="section-title">📋 Party Details</div>
+    <p class="section-sub">Everything you need to know</p>
+    <div class="detail-card">
+      <div class="detail-row">
+        <div class="d-icon">📅</div>
+        <div><div class="d-label">Date</div><div class="d-val">Thursday, May 7, 2025</div></div>
+      </div>
+      <div class="detail-row">
+        <div class="d-icon">⏰</div>
+        <div><div class="d-label">Time</div><div class="d-val">3:20 PM – 5:20 PM</div></div>
+      </div>
+      <div class="detail-row">
+        <div class="d-icon">📍</div>
+        <div>
+          <div class="d-label">Venue</div>
+          <div class="d-val">My Little Paris Café & Play</div>
+          <div class="d-note">416 E. Las Tunas Dr, Unit C, San Gabriel, CA 91776</div>
+          <a class="d-link" href="https://maps.app.goo.gl/Hx6W7bYgCP7UjneV9" target="_blank">📌 Get Directions →</a>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="d-icon">🏠</div>
+        <div>
+          <div class="d-label">Space</div>
+          <div class="d-val">Private VIP Room</div>
+          <div class="d-note">Our party is in a private room — the indoor play space next door is shared with other café guests.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOD ═══════════════ -->
+
+<section class="section bg-white reveal">
+  <div class="section-inner">
+    <div class="section-title">🍽️ What's Included</div>
+    <p class="section-sub">No need to bring food — we've got it all covered!</p>
+    <div class="detail-card">
+      <div class="detail-row" style="border-bottom:none;padding-bottom:8px">
+        <div class="d-icon">🎁</div>
+        <div>
+          <div class="d-label">Included with the party</div>
+          <div class="pill-grid">
+            <div class="pill">🍝 Pasta or pizza</div>
+            <div class="pill">🥗 Salad</div>
+            <div class="pill">🍋 Lemonade or iced tea</div>
+            <div class="pill">💧 Water</div>
+            <div class="pill">🧃 Juice pouches for kids</div>
+            <div class="pill">☕ Coffee station</div>
+            <div class="pill">🎂 Birthday cake</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ REMINDERS ═══════════════ -->
+
+<section class="section bg-purple dots-bg reveal">
+  <div class="section-inner">
+    <div class="section-title">📌 Good to Know</div>
+    <p class="section-sub">A few things before you arrive</p>
+    <div class="reminder-list">
+      <div class="reminder-item">
+        <div class="r-icon">🧦</div>
+        <div class="r-text">
+          <strong>Socks required for everyone</strong>
+          <span>All kids and adults must wear socks in the play space and private room. No socks, no play!</span>
+        </div>
+      </div>
+      <div class="reminder-item">
+        <div class="r-icon">📝</div>
+        <div class="r-text">
+          <strong>Sign the waiver before arriving</strong>
+          <span>Every family needs a signed waiver. Save time by signing online:
+            <a href="https://waiver.smartwaiver.com/v/mylittleparis/" target="_blank">Sign Waiver Here →</a>
+          </span>
+        </div>
+      </div>
+      <div class="reminder-item">
+        <div class="r-icon">🅿️</div>
+        <div class="r-text">
+          <strong>Free Parking</strong>
+          <span>Free ground parking is available in the plaza. If it's full, additional free underground parking is available nearby.</span>
+        </div>
+      </div>
+      <div class="reminder-item">
+        <div class="r-icon">👶</div>
+        <div class="r-text">
+          <strong>Baby room available</strong>
+          <span>If you feel the kids' playground is too stimulating or unsafe for your infant, there is a separate baby room available.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ RSVP ═══════════════ -->
+
+<section class="section" id="rsvp" style="background:linear-gradient(180deg,var(--purple-pale) 0%,white 100%)">
+  <div class="section-inner">
+    <div class="section-title">💌 RSVP</div>
+    <p class="section-sub">Please respond by <strong>April 24, 2025</strong> 🐾</p>
+
+```
+<div class="rsvp-card">
+  <div id="rsvp-form-wrap">
+
+    <div class="form-group">
+      <label for="fname">Parent / Guardian Name *</label>
+      <input type="text" id="fname" placeholder="Your full name">
+    </div>
+
+    <div class="form-group">
+      <label for="femail">Email Address *</label>
+      <input type="email" id="femail" placeholder="you@example.com">
+    </div>
+
+    <div class="form-group">
+      <label for="fchild">Child's Name(s)</label>
+      <input type="text" id="fchild" placeholder="e.g. Emma & Leo">
+    </div>
+
+    <div class="form-group">
+      <label>Will you be joining us? *</label>
+      <div class="attendance-toggle">
+        <button type="button" class="att-btn" id="btn-yes" onclick="setAttend('yes')">🎉 We'll be there!</button>
+        <button type="button" class="att-btn" id="btn-no" onclick="setAttend('no')">😢 Can't make it</button>
+      </div>
+    </div>
+
+    <div id="guest-counts" style="display:none">
+      <div class="count-section">
+        <label>Number of Guests</label>
+        <div class="count-grid">
+          <div class="count-box">
+            <span class="cb-emoji">🧑</span>
+            <div class="cb-label">Adults</div>
+            <div class="count-ctrl">
+              <button onclick="adj('adults',-1)">−</button>
+              <input type="number" id="f-adults" value="1" min="0" max="10" readonly>
+              <button onclick="adj('adults',1)">+</button>
+            </div>
+          </div>
+          <div class="count-box">
+            <span class="cb-emoji">🧒</span>
+            <div class="cb-label">Kids</div>
+            <div class="count-ctrl">
+              <button onclick="adj('kids',-1)">−</button>
+              <input type="number" id="f-kids" value="1" min="0" max="10" readonly>
+              <button onclick="adj('kids',1)">+</button>
+            </div>
+          </div>
+          <div class="count-box">
+            <span class="cb-emoji">👶</span>
+            <div class="cb-label">Infants</div>
+            <div class="count-ctrl">
+              <button onclick="adj('infants',-1)">−</button>
+              <input type="number" id="f-infants" value="0" min="0" max="10" readonly>
+              <button onclick="adj('infants',1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fdietary">Food allergies or dietary restrictions?</label>
+        <textarea id="fdietary" placeholder="e.g. nut allergy, gluten-free..."></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fnote">Message for Henry 🐷 (optional)</label>
+      <textarea id="fnote" placeholder="Leave the birthday boy a little note!"></textarea>
+    </div>
+
+    <div id="form-error"></div>
+
+    <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">
+      Send RSVP 🎈
+    </button>
+    <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px">
+      🔒 Your info is only used to plan the party.
+    </p>
+  </div>
+
+  <div id="rsvp-success">
+    <div class="big" id="s-emoji">🎉</div>
+    <h3 id="s-heading">See you there!</h3>
+    <p id="s-msg">Thanks for RSVPing! Henry can't wait to celebrate with you. 🐷🎂</p>
+  </div>
+</div>
+
+<!-- Setup note -->
+<div style="background:#fff8e0;border:2px dashed var(--yellow);border-radius:16px;padding:16px 20px;margin-top:20px;font-size:13px;color:#6b4a00">
+  <strong>⚙️ Host Setup:</strong> Replace <code style="background:#ffefc0;padding:1px 5px;border-radius:4px">YOUR_APPS_SCRIPT_URL</code> in the JS below with your Google Apps Script Web App URL to activate form submissions + Gmail notifications.
+  The Apps Script code is included as a comment in the source.
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+
+<footer>
+  <div class="footer-emojis">🐷 🎂 🎈</div>
+  <strong>Henry's 4th Birthday Party</strong><br>
+  Thursday, May 7, 2025 · My Little Paris Café & Play<br>
+  416 E. Las Tunas Dr, Unit C, San Gabriel, CA 91776<br><br>
+  Questions? Contact <strong>Yanning Cui & Huayang Xie</strong><br>
+  <a href="mailto:ycui0011@gmail.com">ycui0011@gmail.com</a>
+  <div style="margin-top:16px;font-size:11px;opacity:.4">Made with 💜 for Henry</div>
+</footer>
+
+<script>
+/* ── LOAD IMAGES FROM UPLOADS ── */
+// Peppa banner — base64 encoded from uploaded image
+// In production these would be real URLs; for now we use placeholders styled with CSS
+document.getElementById('peppa-banner').style.cssText+=';background:var(--purple);min-height:300px;display:flex;align-items:center;justify-content:center;';
+
+// Since we can't embed the actual uploaded images in this artifact directly,
+// show styled placeholders with instructions
+const peppa = document.getElementById('peppa-banner');
+peppa.onerror = () => {};
+peppa.src = 'pic/background.JPG'; // Replace with hosted URL of the Peppa "Time to Party" image
+
+const henry = document.getElementById('henry-photo');
+henry.onerror = () => {};
+henry.src = 'pic/Henry.JPG'; // Replace with hosted URL of Henry's photo
+
+// Fallback background if images don't load
+peppa.addEventListener('error', () => {
+  peppa.style.display = 'none';
+  document.getElementById('hero').style.paddingTop = '60px';
+});
+henry.addEventListener('error', () => {
+  henry.closest('.hero-photo-wrap').innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:52px;background:var(--purple-lt)">🐷</div>';
+});
+
+/* ── SCROLL REVEAL ── */
+const obs = new IntersectionObserver(els => {
+  els.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── ATTENDANCE ── */
+let attending = '';
+function setAttend(val) {
+  attending = val;
+  document.getElementById('btn-yes').className = 'att-btn' + (val==='yes' ? ' active-yes' : '');
+  document.getElementById('btn-no').className  = 'att-btn' + (val==='no'  ? ' active-no'  : '');
+  document.getElementById('guest-counts').style.display = val==='yes' ? 'block' : 'none';
+}
+
+/* ── COUNTER ── */
+function adj(field, delta) {
+  const el = document.getElementById('f-'+field);
+  el.value = Math.min(10, Math.max(0, parseInt(el.value||0)+delta));
+}
+
+/* ── RSVP SUBMIT ── */
+// ⚠️ Replace with your Google Apps Script Web App URL
+const SHEET_URL = 'YOUR_APPS_SCRIPT_URL';
+
+async function submitRSVP() {
+  const errEl = document.getElementById('form-error');
+  errEl.style.display = 'none';
+
+  const name  = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  if (!name)  { showErr('Please enter your name.'); return; }
+  if (!email || !email.includes('@')) { showErr('Please enter a valid email.'); return; }
+  if (!attending) { showErr('Please let us know if you can attend.'); return; }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true; btn.textContent = 'Sending... 🐷';
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    name, email,
+    childName: document.getElementById('fchild').value.trim(),
+    attending,
+    adults:   attending==='yes' ? document.getElementById('f-adults').value  : 0,
+    kids:     attending==='yes' ? document.getElementById('f-kids').value    : 0,
+    infants:  attending==='yes' ? document.getElementById('f-infants').value : 0,
+    dietary:  document.getElementById('fdietary').value.trim(),
+    note:     document.getElementById('fnote').value.trim()
+  };
+
+  try {
+    if (SHEET_URL === 'YOUR_APPS_SCRIPT_URL') {
+      await new Promise(r => setTimeout(r, 800)); // demo delay
+    } else {
+      await fetch(SHEET_URL, { method:'POST', body: JSON.stringify(payload) });
+    }
+    showSuccess(attending, name);
+  } catch(e) {
+    btn.disabled = false; btn.textContent = 'Send RSVP 🎈';
+    showErr('Something went wrong. Please try again or email us directly.');
+  }
+}
+
+function showErr(msg) {
+  const el = document.getElementById('form-error');
+  el.textContent = msg; el.style.display = 'block';
+}
+
+function showSuccess(attend, name) {
+  document.getElementById('rsvp-form-wrap').style.display = 'none';
+  const s = document.getElementById('rsvp-success');
+  s.style.display = 'block';
+  if (attend === 'no') {
+    document.getElementById('s-emoji').textContent = '💜';
+    document.getElementById('s-heading').textContent = "We'll miss you!";
+    document.getElementById('s-msg').textContent = `Thanks for letting us know, ${name.split(' ')[0]}. We'll miss you and your little ones!`;
+  } else {
+    document.getElementById('s-msg').textContent = `Thanks, ${name.split(' ')[0]}! Henry is so excited to see you on May 7th. 🐷🎂`;
+  }
+}
+
+/*
+═══════════════════════════════════════════════════════
+  GOOGLE APPS SCRIPT — paste into your Sheet's App Script
+  (Extensions → Apps Script → New Project → paste → Save → Deploy → Web App)
+═══════════════════════════════════════════════════════
+
+const NOTIFY_EMAIL = 'ycui0011@gmail.com';
+
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const d = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    d.timestamp, d.name, d.email, d.childName,
+    d.attending, d.adults, d.kids, d.infants,
+    d.dietary, d.note
+  ]);
+
+  // Email notification
+  const subject = d.attending === 'yes'
+    ? `🎉 New RSVP: ${d.name} is coming to Henry's party!`
+    : `😢 RSVP: ${d.name} can't make it`;
+
+  const body = `New RSVP received!\n\nName: ${d.name}\nEmail: ${d.email}\nChild(ren): ${d.childName}\nAttending: ${d.attending}\nAdults: ${d.adults} | Kids: ${d.kids} | Infants: ${d.infants}\nDietary: ${d.dietary || 'none'}\nMessage: ${d.note || 'none'}\n\nTimestamp: ${d.timestamp}`;
+
+  MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'ok' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+═══════════════════════════════════════════════════════
+*/
+</script>
+
+</body>
+</html>
