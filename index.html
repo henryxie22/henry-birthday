@@ -389,19 +389,19 @@ footer a:hover { text-decoration: underline; }
 
 /* ── PEPPA CHARACTER ── */
 .section-header-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 16px;
+  position: relative;
   margin-bottom: 6px;
 }
-.section-header-row .section-title { margin-bottom: 0; }
 .peppa-char {
   width: 130px;
   height: 130px;
   object-fit: contain;
-  flex-shrink: 0;
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
   mix-blend-mode: multiply;
   animation: peppa-bounce 2.8s ease-in-out infinite;
+  pointer-events: none;
 }
 @keyframes peppa-bounce {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
