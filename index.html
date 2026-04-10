@@ -3,388 +3,447 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henry's 4th Birthday 🐷</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<title>Henry's 4th Birthday 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --purple:#6b3fa0;
-  --purple-dk:#4a2770;
-  --purple-lt:#9b6fd0;
-  --purple-pale:#f3eeff;
-  --purple-mid:#7e52b8;
-  --yellow:#ffd93d;
-  --pink:#ff6eb4;
-  --green:#5ec97e;
-  --blue:#4fb3e8;
-  --white:#fff;
-  --text:#2d1a4a;
-  --muted:#7a5fa0;
-  --border:#d4b8f0;
-  --card:#faf5ff;
-  --radius-lg:20px;
-  --radius-xl:28px;
-  --shadow-sm:0 2px 12px rgba(107,63,160,.08);
-  --shadow-md:0 6px 28px rgba(107,63,160,.13);
-  --shadow-lg:0 12px 48px rgba(107,63,160,.18);
+:root {
+  --cream: #f7f3ec;
+  --cream-dk: #ede7db;
+  --text: #1a1a1a;
+  --muted: #7a7060;
+  --red: #e8453c;
+  --pink: #f4a7b0;
+  --yellow: #f5c842;
+  --green: #5bb87a;
+  --teal: #4db8a4;
+  --blue: #5b9bd5;
+  --orange: #f07d3a;
+  --gold: #c9a84c;
+  --border: #ddd5c5;
+  --white: #ffffff;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Nunito Sans',sans-serif;
-  background:#f0e8ff;
-  color:var(--text);
-  font-size:15px;
-  line-height:1.6;
-  overflow-x:hidden;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── SCATTERED CONFETTI BACKGROUND ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, var(--red) 2px, transparent 2px),
+    radial-gradient(circle, var(--yellow) 2px, transparent 2px),
+    radial-gradient(circle, var(--teal) 2px, transparent 2px),
+    radial-gradient(circle, var(--pink) 2px, transparent 2px),
+    radial-gradient(circle, var(--blue) 2px, transparent 2px),
+    radial-gradient(circle, var(--green) 2px, transparent 2px);
+  background-size: 180px 180px, 220px 220px, 160px 160px, 200px 200px, 240px 240px, 190px 190px;
+  background-position: 20px 30px, 80px 90px, 140px 20px, 50px 150px, 110px 60px, 170px 130px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ── HERO ── */
-#hero{
-  position:relative;
-  overflow:hidden;
-  min-height:420px;
+#hero {
+  position: relative;
+  background: var(--cream);
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
 }
-.hero-peppa-bg{
-  width:100%;
-  display:block;
-  max-height:460px;
-  object-fit:cover;
-  object-position:center 30%;
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
 }
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(74,39,112,0.15) 0%, rgba(74,39,112,0.75) 65%, rgba(74,39,112,0.95) 100%);
+.hero-img-wrap img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
-.hero-content{
-  position:absolute;
-  bottom:0; left:0; right:0;
-  z-index:2;
-  text-align:center;
-  padding:0 24px 48px;
+.hero-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(transparent, var(--cream));
 }
-.hero-photo-wrap{
-  width:130px; height:130px;
-  border-radius:50%;
-  border:4px solid rgba(255,255,255,0.9);
-  box-shadow:0 0 0 6px rgba(155,111,208,0.4), var(--shadow-lg);
-  overflow:hidden;
-  margin:0 auto 18px;
-  background:var(--purple-lt);
+.hero-body {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px 52px;
+  margin-top: -80px;
 }
-.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-tag{
-  background:var(--yellow);
-  color:var(--purple-dk);
-  font-family:'Nunito',sans-serif;
-  font-weight:900;
-  font-size:11px;
-  padding:5px 16px;
-  border-radius:20px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  display:inline-block;
-  margin-bottom:12px;
+.hero-photo-wrap {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  box-shadow: 0 4px 20px rgba(0,0,0,.12), 0 0 0 3px var(--cream-dk);
+  overflow: hidden;
+  margin: 0 auto 20px;
+  background: var(--cream-dk);
 }
-#hero h1{
-  font-family:'Nunito',sans-serif;
-  font-weight:900;
-  font-size:clamp(2.2rem,8vw,3.4rem);
-  color:white;
-  text-shadow:0 2px 16px rgba(0,0,0,.3);
-  line-height:1.1;
-  margin-bottom:10px;
+.hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-tag {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
-#hero .subtitle{
-  color:rgba(255,255,255,.88);
-  font-size:clamp(1rem,3vw,1.15rem);
-  font-weight:600;
-  letter-spacing:.3px;
+#hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.4rem, 9vw, 3.8rem);
+  color: var(--text);
+  line-height: 1.05;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+#hero h1 em {
+  font-style: italic;
+  color: var(--red);
+}
+.hero-divider {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.hero-divider span { font-size: 18px; }
+.hero-divider::before, .hero-divider::after {
+  content: '';
+  flex: 1; max-width: 60px;
+  height: 1.5px;
+  background: var(--border);
+}
+.hero-date {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 2;
 }
 
-/* ── WAVY DIVIDER ── */
-.wave{display:block;width:100%;line-height:0;margin-top:-2px}
-.wave svg{display:block;width:100%}
+/* ── DECORATIVE EMOJI STRIP ── */
+.emoji-strip {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 26px;
+  padding: 18px 24px;
+  background: var(--cream-dk);
+  border-top: 1.5px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
 
 /* ── SECTIONS ── */
-.section{padding:56px 20px}
-.section-inner{max-width:640px;margin:0 auto}
-.section-label{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(107,63,160,.1);
-  border:1.5px solid rgba(107,63,160,.15);
-  border-radius:20px;
-  padding:4px 14px;
-  font-family:'Nunito',sans-serif;
-  font-weight:800;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  color:var(--purple-mid);
-  margin-bottom:10px;
+.section { padding: 52px 24px; position: relative; z-index: 1; }
+.section-inner { max-width: 620px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
 }
-.section-title{
-  font-family:'Nunito',sans-serif;
-  font-weight:900;
-  font-size:clamp(1.5rem,4vw,2rem);
-  color:var(--purple-dk);
-  margin-bottom:4px;
-  line-height:1.2;
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.15;
 }
-.section-sub{color:var(--muted);font-size:13.5px;margin-bottom:28px;line-height:1.5}
+.section-sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
 
 /* ── DETAIL CARD ── */
-.detail-card{
-  background:white;
-  border-radius:var(--radius-xl);
-  padding:6px 22px;
-  box-shadow:var(--shadow-md);
-  border:1.5px solid rgba(212,184,240,.5);
+.detail-card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,.05);
 }
-.detail-row{
-  display:flex;align-items:flex-start;gap:16px;
-  padding:16px 0;
-  border-bottom:1px solid rgba(212,184,240,.4);
+.detail-row {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1.5px solid var(--cream-dk);
 }
-.detail-row:last-child{border-bottom:none}
-.d-icon{
-  font-size:18px;
-  width:38px;height:38px;
-  background:var(--purple-pale);
-  border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
+.detail-row:last-child { border-bottom: none; }
+.d-icon {
+  font-size: 20px;
+  width: 40px; height: 40px;
+  background: var(--cream);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border);
 }
-.d-label{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--purple-lt);margin-bottom:3px}
-.d-val{font-size:15px;font-weight:700;color:var(--text)}
-.d-note{font-size:13px;color:var(--muted);margin-top:3px}
-.d-link{
-  display:inline-flex;align-items:center;gap:4px;
-  margin-top:8px;font-size:13px;
-  color:var(--purple-mid);font-weight:700;
-  text-decoration:none;
-  background:var(--purple-pale);
-  padding:5px 12px;border-radius:20px;
-  border:1.5px solid var(--border);
-  transition:background .2s;
+.d-label {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 3px;
 }
-.d-link:hover{background:var(--border)}
+.d-val { font-size: 15px; font-weight: 600; color: var(--text); }
+.d-note { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.d-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 8px; font-size: 13px;
+  color: var(--red); font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--pink);
+  transition: border-color .2s;
+}
+.d-link:hover { border-color: var(--red); }
 
 /* ── FOOD PILLS ── */
-.pill-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.pill{
-  background:var(--purple-pale);
-  border:1.5px solid rgba(212,184,240,.6);
-  border-radius:20px;
-  padding:6px 14px;
-  font-size:13px;font-weight:600;
-  color:var(--purple-dk);
-  display:flex;align-items:center;gap:5px;
-  transition:transform .15s;
+.pill-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pill {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 13px; font-weight: 600;
+  color: var(--text);
+  display: flex; align-items: center; gap: 5px;
 }
-.pill:hover{transform:translateY(-1px)}
 
 /* ── REMINDERS ── */
-.reminder-list{display:flex;flex-direction:column;gap:10px}
-.reminder-item{
-  background:white;
-  border-radius:var(--radius-lg);
-  padding:16px 18px;
-  display:flex;gap:14px;align-items:flex-start;
-  box-shadow:var(--shadow-sm);
-  border:1.5px solid rgba(212,184,240,.4);
-  transition:transform .2s, box-shadow .2s;
+.reminder-list { display: flex; flex-direction: column; gap: 10px; }
+.reminder-item {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex; gap: 14px; align-items: flex-start;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  transition: transform .2s;
 }
-.reminder-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.r-icon{
-  font-size:18px;width:40px;height:40px;
-  background:linear-gradient(135deg,var(--purple-pale),#e8d8ff);
-  border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
+.reminder-item:hover { transform: translateY(-2px); }
+.r-icon {
+  font-size: 18px; width: 40px; height: 40px;
+  background: var(--cream);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border);
 }
-.r-text strong{font-family:'Nunito',sans-serif;font-weight:800;display:block;margin-bottom:3px;color:var(--text);font-size:14.5px}
-.r-text span{font-size:13.5px;color:var(--muted);line-height:1.5}
-.r-text a{color:var(--purple-mid);font-weight:700;text-decoration:none}
-.r-text a:hover{text-decoration:underline}
+.r-text strong {
+  font-weight: 700; display: block;
+  margin-bottom: 2px; color: var(--text); font-size: 14.5px;
+}
+.r-text span { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+.r-text a { color: var(--red); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--pink); }
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 10px;
+  color: var(--border);
+  padding: 8px 0;
+  position: relative; z-index: 1;
+}
 
 /* ── RSVP ── */
-#rsvp{background:linear-gradient(180deg,#ede0ff 0%,white 100%)}
-.rsvp-card{
-  background:white;
-  border-radius:var(--radius-xl);
-  padding:36px 28px;
-  box-shadow:var(--shadow-lg);
-  border:1.5px solid rgba(212,184,240,.5);
-  position:relative;overflow:hidden;
+#rsvp { background: var(--cream); }
+.rsvp-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 36px 28px;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 4px 32px rgba(0,0,0,.07);
+  position: relative; overflow: hidden;
 }
-.rsvp-card::before{
-  content:'🐷';
-  position:absolute;right:20px;top:16px;
-  font-size:64px;opacity:.05;
-  pointer-events:none;
+.rsvp-card::before {
+  content: '🎂';
+  position: absolute; right: 18px; top: 14px;
+  font-size: 60px; opacity: .06;
+  pointer-events: none;
 }
+label {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.form-group { margin-bottom: 20px; }
+input, select, textarea {
+  width: 100%; padding: 13px 16px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--text);
+  background: var(--cream);
+  transition: border-color .2s, box-shadow .2s, background .2s; outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--text);
+  box-shadow: 0 0 0 3px rgba(26,26,26,.07);
+  background: var(--white);
+}
+textarea { resize: vertical; min-height: 80px; }
 
-label{
-  display:block;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;
-  text-transform:uppercase;letter-spacing:.7px;
-  color:var(--purple-dk);margin-bottom:8px;
+.attendance-toggle { display: flex; gap: 10px; margin-top: 4px; }
+.att-btn {
+  flex: 1; padding: 12px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px;
+  color: var(--muted); cursor: pointer; transition: all .2s; text-align: center;
 }
-.form-group{margin-bottom:20px}
-input,select,textarea{
-  width:100%;padding:13px 16px;
-  border:1.5px solid var(--border);border-radius:12px;
-  font-family:'Nunito Sans',sans-serif;font-size:15px;color:var(--text);
-  background:#faf7ff;
-  transition:border-color .2s,box-shadow .2s,background .2s;outline:none;
-}
-input:focus,select:focus,textarea:focus{
-  border-color:var(--purple-mid);
-  box-shadow:0 0 0 4px rgba(107,63,160,.1);
-  background:white;
-}
-textarea{resize:vertical;min-height:80px}
+.att-btn:hover { border-color: var(--text); color: var(--text); }
+.att-btn.active-yes { background: var(--text); border-color: var(--text); color: white; }
+.att-btn.active-no { background: var(--red); border-color: var(--red); color: white; }
 
-/* Attendance */
-.attendance-toggle{display:flex;gap:10px;margin-top:4px}
-.att-btn{
-  flex:1;padding:12px;
-  border:1.5px solid var(--border);border-radius:12px;
-  background:#faf7ff;
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;
-  color:var(--muted);cursor:pointer;transition:all .2s;text-align:center;
+.count-section { margin-bottom: 20px; }
+.count-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+@media(max-width:480px){ .count-grid { grid-template-columns: 1fr; } }
+.count-box {
+  background: var(--cream);
+  border: 1.5px solid var(--border); border-radius: 12px;
+  padding: 14px 10px; text-align: center;
 }
-.att-btn:hover{border-color:var(--purple-lt);color:var(--purple)}
-.att-btn.active-yes{background:var(--purple);border-color:var(--purple);color:white;box-shadow:0 4px 16px rgba(107,63,160,.3)}
-.att-btn.active-no{background:#e84545;border-color:#e84545;color:white;box-shadow:0 4px 16px rgba(232,69,69,.3)}
+.count-box .cb-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.count-box .cb-emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.count-ctrl {
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  overflow: hidden; background: white;
+}
+.count-ctrl button {
+  background: none; border: none; width: 36px; height: 38px;
+  font-size: 18px; font-weight: 700; color: var(--text); cursor: pointer;
+  transition: background .15s; flex-shrink: 0;
+}
+.count-ctrl button:hover { background: var(--cream); }
+.count-ctrl input {
+  border: none; border-radius: 0; text-align: center;
+  font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px;
+  background: transparent; padding: 8px 2px; width: 100%;
+}
+.count-ctrl input:focus { box-shadow: none; background: transparent; }
 
-/* Guest count */
-.count-section{margin-bottom:20px}
-.count-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-@media(max-width:480px){.count-grid{grid-template-columns:1fr}}
-.count-box{
-  background:#faf7ff;
-  border:1.5px solid var(--border);border-radius:16px;
-  padding:14px 10px;text-align:center;
+.submit-btn {
+  width: 100%; padding: 16px;
+  background: var(--text);
+  color: white; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px;
+  border: none; border-radius: 12px; cursor: pointer;
+  letter-spacing: .5px;
+  transition: background .2s, transform .2s; margin-top: 8px;
 }
-.count-box .cb-label{
-  font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;
-  color:var(--purple-dk);margin-bottom:10px;
-}
-.count-box .cb-emoji{font-size:22px;display:block;margin-bottom:4px}
-.count-ctrl{
-  display:flex;align-items:center;justify-content:center;
-  border:1.5px solid var(--border);border-radius:10px;overflow:hidden;background:white;
-}
-.count-ctrl button{
-  background:none;border:none;width:36px;height:38px;
-  font-size:18px;font-weight:900;color:var(--purple-dk);cursor:pointer;
-  transition:background .15s;flex-shrink:0;
-}
-.count-ctrl button:hover{background:var(--purple-pale)}
-.count-ctrl input{
-  border:none;border-radius:0;text-align:center;
-  font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;
-  background:transparent;padding:8px 2px;width:100%;
-}
-.count-ctrl input:focus{box-shadow:none;background:transparent}
+.submit-btn:hover { background: #333; transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
+.submit-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
 
-/* Submit */
-.submit-btn{
-  width:100%;padding:16px;
-  background:linear-gradient(135deg,var(--purple-lt) 0%,var(--purple-dk) 100%);
-  color:white;font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;
-  border:none;border-radius:14px;cursor:pointer;
-  box-shadow:0 6px 24px rgba(74,39,112,.3);
-  transition:transform .2s,box-shadow .2s;margin-top:8px;
-  letter-spacing:.3px;
+#form-error {
+  display: none; color: var(--red); font-size: 13.5px; font-weight: 600;
+  margin-bottom: 14px; padding: 12px 16px;
+  background: #fff0f0; border-radius: 10px;
+  border: 1.5px solid #ffc5c5;
 }
-.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(74,39,112,.4)}
-.submit-btn:active{transform:translateY(0)}
-.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-
-#form-error{
-  display:none;color:#c0392b;font-size:13.5px;font-weight:700;
-  margin-bottom:14px;padding:12px 16px;
-  background:#fff0f0;border-radius:10px;
-  border:1.5px solid #ffc5c5;
+#rsvp-success { display: none; text-align: center; padding: 32px 16px; }
+#rsvp-success .big { font-size: 56px; margin-bottom: 14px; }
+#rsvp-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 22px;
+  color: var(--text); margin-bottom: 8px;
 }
-#rsvp-success{display:none;text-align:center;padding:32px 16px}
-#rsvp-success .big{font-size:56px;margin-bottom:14px}
-#rsvp-success h3{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;color:var(--purple-dk);margin-bottom:8px}
-#rsvp-success p{color:var(--muted);font-size:15px}
+#rsvp-success p { color: var(--muted); font-size: 15px; }
 
 /* ── BG ALTERNATION ── */
-.bg-white{background:white}
-.bg-purple{background:linear-gradient(160deg,#ede0ff 0%,#e0d0f8 100%)}
+.bg-white { background: var(--white); }
+.bg-cream { background: var(--cream-dk); }
 
 /* ── FOOTER ── */
-footer{
-  background:var(--purple-dk);
-  color:rgba(255,255,255,.7);
-  text-align:center;padding:40px 24px;font-size:13px;
-  line-height:1.8;
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,.6);
+  text-align: center; padding: 44px 24px; font-size: 13px;
+  line-height: 1.9; position: relative; z-index: 1;
 }
-footer strong{color:white;font-family:'Nunito',sans-serif}
-footer a{color:var(--yellow);text-decoration:none}
-footer a:hover{text-decoration:underline}
-.footer-emojis{font-size:28px;margin-bottom:14px;letter-spacing:4px}
+footer strong { color: white; }
+footer a { color: var(--yellow); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.footer-emojis { font-size: 26px; margin-bottom: 16px; letter-spacing: 6px; }
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
-
-/* ── DOTS BG ── */
-.dots-bg{position:relative}
-.dots-bg::after{
-  content:'';position:absolute;inset:0;
-  background-image:radial-gradient(circle,rgba(107,63,160,.07) 1.5px,transparent 1.5px);
-  background-size:24px 24px;
-  pointer-events:none;z-index:0;
-}
-.dots-bg>.section-inner{position:relative;z-index:1}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
-  <img class="hero-peppa-bg"
-    src="pic/background.JPG"
-    id="peppa-banner"
-    alt="Peppa Pig Time to Party">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
+  <div class="hero-img-wrap">
+    <img id="peppa-banner" src="pic/background.JPG" alt="Henry's Birthday Party">
+  </div>
+  <div class="hero-body">
     <div class="hero-photo-wrap">
       <img id="henry-photo" src="pic/henry.jpeg" alt="Henry">
     </div>
-    <div class="hero-tag">🎉 You're Invited!</div>
-    <h1>Henry's<br>4th Birthday!</h1>
-    <p class="subtitle">Thursday, May 7 · 3:20 – 5:20 PM</p>
+    <div class="hero-tag">🎉 You're Invited</div>
+    <h1>Henry is<br><em>Turning 4!</em></h1>
+    <div class="hero-divider"><span>🎈</span></div>
+    <div class="hero-date">
+      Thursday, May 7, 2026<br>
+      3:20 PM – 5:20 PM<br>
+      My Little Paris Café & Play
+    </div>
   </div>
 </section>
 
-<div class="wave" style="background:transparent;margin-top:-1px">
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
-    <path d="M0,28 Q360,56 720,28 Q1080,0 1440,28 L1440,56 L0,56Z" fill="#f0e8ff"/>
-  </svg>
+<div class="emoji-strip" aria-hidden="true">
+  🎂 🎈 🎁 🍰 🎊 🪅 🧁 🎀 🎉 🕯️ 🍭 ⭐
 </div>
 
 <!-- ═══════════════ DETAILS ═══════════════ -->
-<section class="section bg-purple dots-bg reveal">
+<section class="section bg-white reveal">
   <div class="section-inner">
-    <div class="section-label">📋 The Details</div>
+    <div class="section-eyebrow">📋 The Details</div>
     <h2 class="section-title">Party Info</h2>
     <p class="section-sub">Everything you need to know before you arrive</p>
     <div class="detail-card">
       <div class="detail-row">
         <div class="d-icon">📅</div>
-        <div><div class="d-label">Date</div><div class="d-val">Thursday, May 7, 2026</div></div>
+        <div>
+          <div class="d-label">Date</div>
+          <div class="d-val">Thursday, May 7, 2026</div>
+        </div>
       </div>
       <div class="detail-row">
         <div class="d-icon">⏰</div>
-        <div><div class="d-label">Time</div><div class="d-val">3:20 PM – 5:20 PM</div></div>
+        <div>
+          <div class="d-label">Time</div>
+          <div class="d-val">3:20 PM – 5:20 PM</div>
+        </div>
       </div>
       <div class="detail-row">
         <div class="d-icon">📍</div>
@@ -407,14 +466,16 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
+<div class="section-divider">· · ·</div>
+
 <!-- ═══════════════ FOOD ═══════════════ -->
-<section class="section bg-white reveal">
+<section class="section bg-cream reveal">
   <div class="section-inner">
-    <div class="section-label">🍽️ Food & Drinks</div>
+    <div class="section-eyebrow">🍽️ Food & Drinks</div>
     <h2 class="section-title">What's Included</h2>
     <p class="section-sub">No need to bring food — we've got it all covered!</p>
     <div class="detail-card">
-      <div class="detail-row" style="border-bottom:none;padding-bottom:8px">
+      <div class="detail-row" style="border-bottom:none">
         <div class="d-icon">🎁</div>
         <div>
           <div class="d-label">Included with the party</div>
@@ -433,10 +494,12 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
+<div class="section-divider">· · ·</div>
+
 <!-- ═══════════════ REMINDERS ═══════════════ -->
-<section class="section bg-purple dots-bg reveal">
+<section class="section bg-white reveal">
   <div class="section-inner">
-    <div class="section-label">📌 Heads Up</div>
+    <div class="section-eyebrow">📌 Heads Up</div>
     <h2 class="section-title">Good to Know</h2>
     <p class="section-sub">A few things before you arrive</p>
     <div class="reminder-list">
@@ -474,31 +537,29 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
+<div class="section-divider">· · ·</div>
+
 <!-- ═══════════════ RSVP ═══════════════ -->
-<section class="section" id="rsvp" style="background:linear-gradient(180deg,#ede0ff 0%,white 100%)">
+<section class="section" id="rsvp">
   <div class="section-inner">
-    <div class="section-label">💌 RSVP</div>
+    <div class="section-eyebrow">💌 RSVP</div>
     <h2 class="section-title">Will You Join Us?</h2>
     <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
 
     <div class="rsvp-card">
       <div id="rsvp-form-wrap">
-
         <div class="form-group">
           <label for="fname">Parent / Guardian Name *</label>
           <input type="text" id="fname" placeholder="Your full name">
         </div>
-
         <div class="form-group">
           <label for="femail">Email Address *</label>
           <input type="email" id="femail" placeholder="you@example.com">
         </div>
-
         <div class="form-group">
           <label for="fchild">Child's Name(s)</label>
           <input type="text" id="fchild" placeholder="e.g. Emma & Leo">
         </div>
-
         <div class="form-group">
           <label>Will you be joining us? *</label>
           <div class="attendance-toggle">
@@ -506,7 +567,6 @@ footer a:hover{text-decoration:underline}
             <button type="button" class="att-btn" id="btn-no" onclick="setAttend('no')">😢 Can't make it</button>
           </div>
         </div>
-
         <div id="guest-counts" style="display:none">
           <div class="count-section">
             <label>Number of Guests</label>
@@ -540,32 +600,25 @@ footer a:hover{text-decoration:underline}
               </div>
             </div>
           </div>
-
           <div class="form-group">
             <label for="fdietary">Food allergies or dietary restrictions?</label>
             <textarea id="fdietary" placeholder="e.g. nut allergy, gluten-free..."></textarea>
           </div>
         </div>
-
         <div class="form-group">
-          <label for="fnote">Message for Henry 🐷 (optional)</label>
+          <label for="fnote">Message for Henry 🎂 (optional)</label>
           <textarea id="fnote" placeholder="Leave the birthday boy a little note!"></textarea>
         </div>
-
         <div id="form-error"></div>
-
-        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">
-          Send RSVP 🎈
-        </button>
+        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">Send RSVP 🎈</button>
         <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:14px">
           🔒 Your info is only used to plan the party.
         </p>
       </div>
-
       <div id="rsvp-success">
         <div class="big" id="s-emoji">🎉</div>
         <h3 id="s-heading">See you there!</h3>
-        <p id="s-msg">Thanks for RSVPing! Henry can't wait to celebrate with you. 🐷🎂</p>
+        <p id="s-msg">Thanks for RSVPing! Henry can't wait to celebrate with you. 🎂</p>
       </div>
     </div>
   </div>
@@ -573,34 +626,30 @@ footer a:hover{text-decoration:underline}
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  <div class="footer-emojis">🐷 🎂 🎈</div>
+  <div class="footer-emojis">🎂 🎈 🎁</div>
   <strong>Henry's 4th Birthday Party</strong><br>
   Thursday, May 7, 2026 · My Little Paris Café & Play<br>
   416 E. Las Tunas Dr, Unit C, San Gabriel, CA 91776<br><br>
   Questions? Contact <strong>Yanning Cui & Huayang Xie</strong><br>
   <a href="mailto:ycui0011@gmail.com">ycui0011@gmail.com</a>
-  <div style="margin-top:18px;font-size:11px;opacity:.35">Made with 💜 for Henry</div>
+  <div style="margin-top:18px;font-size:11px;opacity:.3">Made with love for Henry</div>
 </footer>
 
 <script>
 /* ── IMAGE FALLBACKS ── */
-const peppa = document.getElementById('peppa-banner');
-peppa.addEventListener('error', () => {
-  peppa.style.display = 'none';
-  document.getElementById('hero').style.minHeight = '320px';
-  document.getElementById('hero').style.background = 'var(--purple-dk)';
+document.getElementById('peppa-banner').addEventListener('error', function() {
+  this.style.display = 'none';
+  document.getElementById('hero').style.paddingTop = '60px';
 });
-
-const henry = document.getElementById('henry-photo');
-henry.addEventListener('error', () => {
-  henry.closest('.hero-photo-wrap').innerHTML =
-    '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:52px;background:var(--purple-lt)">🐷</div>';
+document.getElementById('henry-photo').addEventListener('error', function() {
+  this.closest('.hero-photo-wrap').innerHTML =
+    '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;background:#ede7db">🎂</div>';
 });
 
 /* ── SCROLL REVEAL ── */
 const obs = new IntersectionObserver(els => {
   els.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
-}, {threshold:0.08});
+}, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 /* ── ATTENDANCE ── */
@@ -624,28 +673,24 @@ const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxZUKqZWjHDmKV_yNP2yv
 async function submitRSVP() {
   const errEl = document.getElementById('form-error');
   errEl.style.display = 'none';
-
   const name  = document.getElementById('fname').value.trim();
   const email = document.getElementById('femail').value.trim();
   if (!name)  { showErr('Please enter your name.'); return; }
   if (!email || !email.includes('@')) { showErr('Please enter a valid email.'); return; }
   if (!attending) { showErr('Please let us know if you can attend.'); return; }
-
   const btn = document.getElementById('submit-btn');
-  btn.disabled = true; btn.textContent = 'Sending... 🐷';
-
+  btn.disabled = true; btn.textContent = 'Sending...';
   const payload = {
     timestamp: new Date().toISOString(),
     name, email,
     childName: document.getElementById('fchild').value.trim(),
     attending,
-    adults:   attending==='yes' ? document.getElementById('f-adults').value  : 0,
-    kids:     attending==='yes' ? document.getElementById('f-kids').value    : 0,
-    infants:  attending==='yes' ? document.getElementById('f-infants').value : 0,
-    dietary:  document.getElementById('fdietary').value.trim(),
-    note:     document.getElementById('fnote').value.trim()
+    adults:  attending==='yes' ? document.getElementById('f-adults').value  : 0,
+    kids:    attending==='yes' ? document.getElementById('f-kids').value    : 0,
+    infants: attending==='yes' ? document.getElementById('f-infants').value : 0,
+    dietary: document.getElementById('fdietary').value.trim(),
+    note:    document.getElementById('fnote').value.trim()
   };
-
   try {
     await fetch(SHEET_URL, { method:'POST', mode:'no-cors', body: JSON.stringify(payload) });
     showSuccess(attending, name);
@@ -665,11 +710,11 @@ function showSuccess(attend, name) {
   const s = document.getElementById('rsvp-success');
   s.style.display = 'block';
   if (attend === 'no') {
-    document.getElementById('s-emoji').textContent = '💜';
+    document.getElementById('s-emoji').textContent = '💛';
     document.getElementById('s-heading').textContent = "We'll miss you!";
     document.getElementById('s-msg').textContent = `Thanks for letting us know, ${name.split(' ')[0]}. We'll miss you and your little ones!`;
   } else {
-    document.getElementById('s-msg').textContent = `Thanks, ${name.split(' ')[0]}! Henry is so excited to see you on May 7th. 🐷🎂`;
+    document.getElementById('s-msg').textContent = `Thanks, ${name.split(' ')[0]}! Henry is so excited to see you on May 7th. 🎂`;
   }
 }
 </script>
