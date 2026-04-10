@@ -1,0 +1,5 @@
+# Kiro workspace files
+.kiro/
+
+# macOS
+.DS_Store
