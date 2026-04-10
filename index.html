@@ -629,7 +629,7 @@ async function submitRSVP() {
     if (SHEET_URL === 'YOUR_APPS_SCRIPT_URL') {
       await new Promise(r => setTimeout(r, 800)); // demo delay
     } else {
-      await fetch(SHEET_URL, { method:'POST', body: JSON.stringify(payload) });
+      await fetch(SHEET_URL, { method:'POST', mode:'no-cors', body: JSON.stringify(payload) });
     }
     showSuccess(attending, name);
   } catch(e) {
