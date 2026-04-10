@@ -392,16 +392,25 @@ footer a:hover { text-decoration: underline; }
   position: relative;
   margin-bottom: 6px;
 }
-.peppa-char {
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
+.peppa-wrap {
   position: absolute;
   right: -10px;
   bottom: -10px;
-  mix-blend-mode: multiply;
-  animation: peppa-bounce 2.8s ease-in-out infinite;
+  width: 130px;
+  height: 130px;
   pointer-events: none;
+  animation: peppa-bounce 2.8s ease-in-out infinite;
+}
+.peppa-char {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+/* prevent parent sections from isolating the blend mode */
+.section, .section-inner, .section-header-row {
+  isolation: auto;
 }
 @keyframes peppa-bounce {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
@@ -443,7 +452,7 @@ footer a:hover { text-decoration: underline; }
     <div class="section-eyebrow">📋 The Details</div>
     <div class="section-header-row">
       <h2 class="section-title">Party Info</h2>
-      <img src="pic/peppa_1.jpg" alt="Peppa Pig" class="peppa-char">
+      <div class="peppa-wrap"><img src="pic/peppa_1.jpg" alt="Peppa Pig" class="peppa-char"></div>
     </div>
     <p class="section-sub">Everything you need to know before you arrive</p>
     <div class="detail-card">
@@ -490,7 +499,7 @@ footer a:hover { text-decoration: underline; }
     <div class="section-eyebrow">🍽️ Food & Drinks</div>
     <div class="section-header-row">
       <h2 class="section-title">What's Included</h2>
-      <img src="pic/peppa_2.jpg" alt="Peppa Pig" class="peppa-char">
+      <div class="peppa-wrap"><img src="pic/peppa_2.jpg" alt="Peppa Pig" class="peppa-char"></div>
     </div>
     <p class="section-sub">No need to bring food — we've got it all covered!</p>
     <div class="detail-card">
@@ -521,7 +530,7 @@ footer a:hover { text-decoration: underline; }
     <div class="section-eyebrow">📌 Heads Up</div>
     <div class="section-header-row">
       <h2 class="section-title">Good to Know</h2>
-      <img src="pic/peppa_3.jpg" alt="Peppa Pig" class="peppa-char">
+      <div class="peppa-wrap"><img src="pic/peppa_3.jpg" alt="Peppa Pig" class="peppa-char"></div>
     </div>
     <p class="section-sub">A few things before you arrive</p>
     <div class="reminder-list">
@@ -567,7 +576,7 @@ footer a:hover { text-decoration: underline; }
     <div class="section-eyebrow">💌 RSVP</div>
     <div class="section-header-row">
       <h2 class="section-title">Will You Join Us?</h2>
-      <img src="pic/peppa_4.jpg" alt="Peppa Pig" class="peppa-char">
+      <div class="peppa-wrap"><img src="pic/peppa_4.jpg" alt="Peppa Pig" class="peppa-char"></div>
     </div>
     <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
 
