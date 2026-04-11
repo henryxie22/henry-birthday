@@ -415,14 +415,14 @@ footer a:hover { text-decoration: underline; }
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 300px;
+  height: 500px;
   width: auto;
   pointer-events: none;
   z-index: 3;
   animation: peppa-float 2.8s ease-in-out infinite;
 }
 .peppa-wrap.peppa-left {
-  right: 160px;
+  right: 285px;
   animation-delay: 0.4s;
 }
 .peppa-char {
@@ -430,25 +430,8 @@ footer a:hover { text-decoration: underline; }
   width: auto;
   display: block;
 }
-/* RSVP two Georges */
-.rsvp-chars {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0;
-  margin-bottom: 24px;
-}
-.rsvp-chars .peppa-wrap {
-  position: relative;
-  right: auto;
-  top: auto;
-  transform: none;
-  height: 300px;
-  animation: peppa-float 2.8s ease-in-out infinite;
-}
-.rsvp-chars .peppa-wrap.peppa-left {
-  right: auto;
-  animation-delay: 0.4s;
-}
+/* RSVP two Georges — same as other sections */
+.rsvp-chars { display: none; }
 @keyframes peppa-float {
   0%, 100% { transform: translateY(-50%) rotate(-3deg); }
   50%       { transform: translateY(calc(-50% - 8px)) rotate(3deg); }
@@ -459,9 +442,9 @@ footer a:hover { text-decoration: underline; }
   50%       { transform: translateY(-8px) rotate(3deg); }
 }
 @media (max-width: 600px) {
-  .peppa-wrap { height: 220px; }
+  .peppa-wrap { height: 300px; }
   .peppa-wrap.peppa-left { right: 120px; }
-  .rsvp-chars .peppa-wrap { height: 220px; }
+  .rsvp-chars .peppa-wrap { height: 300px; }
 }
 
 /* ── REVEAL ── */
@@ -613,14 +596,13 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ RSVP ═══════════════ -->
 <section class="section" id="rsvp">
+  <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
+  <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
   <div class="section-inner">
     <div class="section-eyebrow">💌 RSVP</div>
     <h2 class="section-title">Will You Join Us?</h2>
     <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
-    <div class="rsvp-chars">
-      <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
-      <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
-    </div>
+    <div class="rsvp-chars"></div>
 
     <div class="rsvp-card">
       <div id="rsvp-form-wrap">
