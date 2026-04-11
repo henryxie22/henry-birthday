@@ -385,7 +385,18 @@ footer {
 footer strong { color: white; }
 footer a { color: var(--yellow); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
-.footer-emojis { font-size: 26px; margin-bottom: 16px; letter-spacing: 6px; }
+.footer-char {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.footer-peppa {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: peppa-bounce 2.8s ease-in-out infinite;
+  filter: brightness(1.1);
+}
 
 /* ── PEPPA CHARACTER ── */
 .section-header-row {
@@ -551,7 +562,7 @@ footer a:hover { text-decoration: underline; }
     <div class="section-eyebrow">📌 Heads Up</div>
     <div class="section-header-row">
       <h2 class="section-title">Good to Know</h2>
-      <div class="peppa-wrap"><img src="pic/peppa_3.png" alt="Peppa Pig" class="peppa-char"></div>
+      <div class="peppa-wrap"><img src="pic/peppa_6.png" alt="Peppa Pig" class="peppa-char"></div>
     </div>
     <p class="section-sub">A few things before you arrive</p>
     <div class="reminder-list">
@@ -598,7 +609,7 @@ footer a:hover { text-decoration: underline; }
     <div class="section-header-row">
       <h2 class="section-title">Will You Join Us?</h2>
       <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
-      <div class="peppa-wrap"><img src="pic/peppa_4.png" alt="George Pig" class="peppa-char"></div>
+      <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
     </div>
     <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
 
@@ -682,7 +693,9 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  <div class="footer-emojis">🎂 🎈 🎁</div>
+  <div class="footer-char">
+    <img src="pic/peppa_2.png" alt="Peppa Pig" class="footer-peppa">
+  </div>
   <strong>Henry's 4th Birthday Party</strong><br>
   Thursday, May 7, 2026 · My Little Paris Café & Play<br>
   416 E. Las Tunas Dr, Unit C, San Gabriel, CA 91776<br><br>
