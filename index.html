@@ -385,17 +385,17 @@ footer {
 footer strong { color: white; }
 footer a { color: var(--yellow); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
-.footer-char {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-}
+.footer-char { display: none; }
 .footer-peppa {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  animation: peppa-bounce 2.8s ease-in-out infinite;
-  filter: brightness(1.1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 400px;
+  width: auto;
+  pointer-events: none;
+  animation: peppa-float 2.8s ease-in-out infinite;
+  z-index: 3;
 }
 
 /* ── PEPPA CHARACTER ── */
@@ -433,6 +433,9 @@ footer a:hover { text-decoration: underline; }
 }
 .peppa-wrap.peppa-6 {
   top: 15%;
+}
+.peppa-wrap.peppa-1 {
+  top: 10%;
 }
 .peppa-char {
   height: 100%;
@@ -605,8 +608,7 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ RSVP ═══════════════ -->
 <section class="section" id="rsvp">
-  <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
-  <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
+  <div class="peppa-wrap peppa-1"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
   <div class="section-inner">
     <div class="section-eyebrow">💌 RSVP</div>
     <h2 class="section-title">Will You Join Us?</h2>
@@ -693,9 +695,7 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  <div class="footer-char">
-    <img src="pic/peppa_2.png" alt="Peppa Pig" class="footer-peppa">
-  </div>
+  <img src="pic/peppa_5.png" alt="Peppa Pig" class="footer-peppa">
   <strong>Henry's 4th Birthday Party</strong><br>
   Thursday, May 7, 2026 · My Little Paris Café & Play<br>
   416 E. Las Tunas Dr, Unit C, San Gabriel, CA 91776<br><br>
