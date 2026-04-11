@@ -401,9 +401,10 @@ footer a:hover { text-decoration: underline; }
 /* ── PEPPA CHARACTER ── */
 .section-header-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   margin-bottom: 6px;
+  overflow: visible;
 }
 .section-header-left {
   display: flex;
@@ -421,6 +422,7 @@ footer a:hover { text-decoration: underline; }
   flex-shrink: 0;
   pointer-events: none;
   animation: peppa-bounce 2.8s ease-in-out infinite;
+  margin-top: -20px; /* let it bleed upward slightly */
 }
 .peppa-wrap.peppa-left {
   animation-delay: 0.4s;
@@ -429,6 +431,17 @@ footer a:hover { text-decoration: underline; }
   height: 100%;
   width: auto;
   display: block;
+}
+/* RSVP: two Georges side by side below the headline */
+.rsvp-chars {
+  display: flex;
+  gap: 0;
+  justify-content: flex-end;
+  margin-top: -20px;
+  overflow: visible;
+}
+.rsvp-chars .peppa-wrap {
+  margin-top: 0;
 }
 @keyframes peppa-bounce {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
@@ -608,6 +621,8 @@ footer a:hover { text-decoration: underline; }
         <h2 class="section-title">Will You Join Us?</h2>
         <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
       </div>
+    </div>
+    <div class="rsvp-chars">
       <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
       <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
     </div>
