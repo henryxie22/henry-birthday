@@ -156,11 +156,8 @@ body::before {
 }
 
 /* ── SECTIONS ── */
-.section { padding: 52px 24px; position: relative; z-index: 1; }
-.section-inner { max-width: 620px; margin: 0 auto; position: relative; padding-right: 200px; }
-@media (max-width: 600px) {
-  .section-inner { padding-right: 150px; }
-}
+.section { padding: 52px 24px; position: relative; z-index: 1; overflow: visible; }
+.section-inner { max-width: 620px; margin: 0 auto; }
 .section-eyebrow {
   font-size: 11px;
   font-weight: 700;
@@ -403,37 +400,29 @@ footer a:hover { text-decoration: underline; }
 
 /* ── PEPPA CHARACTER ── */
 .section-header-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
   margin-bottom: 6px;
-  overflow: visible;
 }
 .section-header-left {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  flex: 1;
-  min-width: 0;
 }
 .section-header-left .section-eyebrow { margin-bottom: 0; }
 .section-header-left .section-title   { margin-bottom: 0; }
 .section-header-left .section-sub     { margin-bottom: 0; }
-/* section-inner is the positioning parent */
-.section-inner {
-  position: relative;
-}
 .peppa-wrap {
   position: absolute;
-  right: -10px;
-  top: 0;
-  height: 500px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
   width: auto;
   pointer-events: none;
-  animation: peppa-bounce 2.8s ease-in-out infinite;
-  z-index: 2;
+  z-index: 3;
+  animation: peppa-float 2.8s ease-in-out infinite;
 }
 .peppa-wrap.peppa-left {
+  right: 160px;
   animation-delay: 0.4s;
 }
 .peppa-char {
@@ -441,35 +430,38 @@ footer a:hover { text-decoration: underline; }
   width: auto;
   display: block;
 }
-/* RSVP: two Georges side by side below the headline */
+/* RSVP two Georges */
 .rsvp-chars {
   display: flex;
-  gap: 0;
   justify-content: flex-end;
-  overflow: visible;
-  position: relative;
-  height: 300px;
+  gap: 0;
+  margin-bottom: 24px;
 }
 .rsvp-chars .peppa-wrap {
   position: relative;
   right: auto;
   top: auto;
+  transform: none;
   height: 300px;
+  animation: peppa-float 2.8s ease-in-out infinite;
 }
-@keyframes peppa-bounce {
+.rsvp-chars .peppa-wrap.peppa-left {
+  right: auto;
+  animation-delay: 0.4s;
+}
+@keyframes peppa-float {
+  0%, 100% { transform: translateY(-50%) rotate(-3deg); }
+  50%       { transform: translateY(calc(-50% - 8px)) rotate(3deg); }
+}
+.rsvp-chars .peppa-wrap { animation-name: peppa-bounce-inline; }
+@keyframes peppa-bounce-inline {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
   50%       { transform: translateY(-8px) rotate(3deg); }
 }
 @media (max-width: 600px) {
-  .peppa-wrap {
-    height: 300px;
-  }
-  .rsvp-chars {
-    height: 300px;
-  }
-  .rsvp-chars .peppa-wrap {
-    height: 300px;
-  }
+  .peppa-wrap { height: 220px; }
+  .peppa-wrap.peppa-left { right: 120px; }
+  .rsvp-chars .peppa-wrap { height: 220px; }
 }
 
 /* ── REVEAL ── */
@@ -503,15 +495,11 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ DETAILS ═══════════════ -->
 <section class="section bg-white reveal">
+  <div class="peppa-wrap"><img src="pic/peppa_7.png" alt="Peppa Pig" class="peppa-char"></div>
   <div class="section-inner">
-    <div class="section-header-row">
-      <div class="section-header-left">
-        <div class="section-eyebrow">📋 The Details</div>
-        <h2 class="section-title">Party Info</h2>
-        <p class="section-sub">Everything you need to know before you arrive</p>
-      </div>
-      <div class="peppa-wrap"><img src="pic/peppa_7.png" alt="Peppa Pig" class="peppa-char"></div>
-    </div>
+    <div class="section-eyebrow">📋 The Details</div>
+    <h2 class="section-title">Party Info</h2>
+    <p class="section-sub">Everything you need to know before you arrive</p>
     <div class="detail-card">
       <div class="detail-row">
         <div class="d-icon">📅</div>
@@ -552,15 +540,11 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ FOOD ═══════════════ -->
 <section class="section bg-cream reveal">
+  <div class="peppa-wrap"><img src="pic/peppa_9.png" alt="Peppa Pig" class="peppa-char"></div>
   <div class="section-inner">
-    <div class="section-header-row">
-      <div class="section-header-left">
-        <div class="section-eyebrow">🍽️ Food & Drinks</div>
-        <h2 class="section-title">What's Included</h2>
-        <p class="section-sub">No need to bring food — we've got it all covered!</p>
-      </div>
-      <div class="peppa-wrap"><img src="pic/peppa_9.png" alt="Peppa Pig" class="peppa-char"></div>
-    </div>
+    <div class="section-eyebrow">🍽️ Food & Drinks</div>
+    <h2 class="section-title">What's Included</h2>
+    <p class="section-sub">No need to bring food — we've got it all covered!</p>
     <div class="detail-card">
       <div class="detail-row" style="border-bottom:none">
         <div class="d-icon">🎁</div>
@@ -585,15 +569,11 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ REMINDERS ═══════════════ -->
 <section class="section bg-white reveal">
+  <div class="peppa-wrap"><img src="pic/peppa_6.png" alt="Peppa Pig" class="peppa-char"></div>
   <div class="section-inner">
-    <div class="section-header-row">
-      <div class="section-header-left">
-        <div class="section-eyebrow">📌 Heads Up</div>
-        <h2 class="section-title">Good to Know</h2>
-        <p class="section-sub">A few things before you arrive</p>
-      </div>
-      <div class="peppa-wrap"><img src="pic/peppa_6.png" alt="Peppa Pig" class="peppa-char"></div>
-    </div>
+    <div class="section-eyebrow">📌 Heads Up</div>
+    <h2 class="section-title">Good to Know</h2>
+    <p class="section-sub">A few things before you arrive</p>
     <div class="reminder-list">
       <div class="reminder-item">
         <div class="r-icon">🧦</div>
@@ -634,13 +614,9 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════ RSVP ═══════════════ -->
 <section class="section" id="rsvp">
   <div class="section-inner">
-    <div class="section-header-row">
-      <div class="section-header-left">
-        <div class="section-eyebrow">💌 RSVP</div>
-        <h2 class="section-title">Will You Join Us?</h2>
-        <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
-      </div>
-    </div>
+    <div class="section-eyebrow">💌 RSVP</div>
+    <h2 class="section-title">Will You Join Us?</h2>
+    <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
     <div class="rsvp-chars">
       <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
       <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
