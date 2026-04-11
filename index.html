@@ -157,7 +157,10 @@ body::before {
 
 /* ── SECTIONS ── */
 .section { padding: 52px 24px; position: relative; z-index: 1; }
-.section-inner { max-width: 620px; margin: 0 auto; }
+.section-inner { max-width: 620px; margin: 0 auto; position: relative; padding-right: 200px; }
+@media (max-width: 600px) {
+  .section-inner { padding-right: 150px; }
+}
 .section-eyebrow {
   font-size: 11px;
   font-weight: 700;
@@ -416,13 +419,19 @@ footer a:hover { text-decoration: underline; }
 .section-header-left .section-eyebrow { margin-bottom: 0; }
 .section-header-left .section-title   { margin-bottom: 0; }
 .section-header-left .section-sub     { margin-bottom: 0; }
+/* section-inner is the positioning parent */
+.section-inner {
+  position: relative;
+}
 .peppa-wrap {
+  position: absolute;
+  right: -10px;
+  top: 0;
   height: 500px;
   width: auto;
-  flex-shrink: 0;
   pointer-events: none;
   animation: peppa-bounce 2.8s ease-in-out infinite;
-  margin-top: -20px; /* let it bleed upward slightly */
+  z-index: 2;
 }
 .peppa-wrap.peppa-left {
   animation-delay: 0.4s;
@@ -437,11 +446,15 @@ footer a:hover { text-decoration: underline; }
   display: flex;
   gap: 0;
   justify-content: flex-end;
-  margin-top: -20px;
   overflow: visible;
+  position: relative;
+  height: 300px;
 }
 .rsvp-chars .peppa-wrap {
-  margin-top: 0;
+  position: relative;
+  right: auto;
+  top: auto;
+  height: 300px;
 }
 @keyframes peppa-bounce {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
@@ -449,6 +462,12 @@ footer a:hover { text-decoration: underline; }
 }
 @media (max-width: 600px) {
   .peppa-wrap {
+    height: 300px;
+  }
+  .rsvp-chars {
+    height: 300px;
+  }
+  .rsvp-chars .peppa-wrap {
     height: 300px;
   }
 }
