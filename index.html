@@ -405,11 +405,16 @@ footer a:hover { text-decoration: underline; }
   gap: 16px;
   margin-bottom: 6px;
 }
-.section-header-row .section-title {
-  margin-bottom: 0;
+.section-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   flex: 1;
   min-width: 0;
 }
+.section-header-left .section-eyebrow { margin-bottom: 0; }
+.section-header-left .section-title   { margin-bottom: 0; }
+.section-header-left .section-sub     { margin-bottom: 0; }
 .peppa-wrap {
   height: 500px;
   width: auto;
@@ -467,12 +472,14 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════ DETAILS ═══════════════ -->
 <section class="section bg-white reveal">
   <div class="section-inner">
-    <div class="section-eyebrow">📋 The Details</div>
     <div class="section-header-row">
-      <h2 class="section-title">Party Info</h2>
+      <div class="section-header-left">
+        <div class="section-eyebrow">📋 The Details</div>
+        <h2 class="section-title">Party Info</h2>
+        <p class="section-sub">Everything you need to know before you arrive</p>
+      </div>
       <div class="peppa-wrap"><img src="pic/peppa_7.png" alt="Peppa Pig" class="peppa-char"></div>
     </div>
-    <p class="section-sub">Everything you need to know before you arrive</p>
     <div class="detail-card">
       <div class="detail-row">
         <div class="d-icon">📅</div>
@@ -514,12 +521,14 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════ FOOD ═══════════════ -->
 <section class="section bg-cream reveal">
   <div class="section-inner">
-    <div class="section-eyebrow">🍽️ Food & Drinks</div>
     <div class="section-header-row">
-      <h2 class="section-title">What's Included</h2>
+      <div class="section-header-left">
+        <div class="section-eyebrow">🍽️ Food & Drinks</div>
+        <h2 class="section-title">What's Included</h2>
+        <p class="section-sub">No need to bring food — we've got it all covered!</p>
+      </div>
       <div class="peppa-wrap"><img src="pic/peppa_9.png" alt="Peppa Pig" class="peppa-char"></div>
     </div>
-    <p class="section-sub">No need to bring food — we've got it all covered!</p>
     <div class="detail-card">
       <div class="detail-row" style="border-bottom:none">
         <div class="d-icon">🎁</div>
@@ -545,12 +554,14 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════ REMINDERS ═══════════════ -->
 <section class="section bg-white reveal">
   <div class="section-inner">
-    <div class="section-eyebrow">📌 Heads Up</div>
     <div class="section-header-row">
-      <h2 class="section-title">Good to Know</h2>
+      <div class="section-header-left">
+        <div class="section-eyebrow">📌 Heads Up</div>
+        <h2 class="section-title">Good to Know</h2>
+        <p class="section-sub">A few things before you arrive</p>
+      </div>
       <div class="peppa-wrap"><img src="pic/peppa_6.png" alt="Peppa Pig" class="peppa-char"></div>
     </div>
-    <p class="section-sub">A few things before you arrive</p>
     <div class="reminder-list">
       <div class="reminder-item">
         <div class="r-icon">🧦</div>
@@ -591,13 +602,15 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════ RSVP ═══════════════ -->
 <section class="section" id="rsvp">
   <div class="section-inner">
-    <div class="section-eyebrow">💌 RSVP</div>
     <div class="section-header-row">
-      <h2 class="section-title">Will You Join Us?</h2>
+      <div class="section-header-left">
+        <div class="section-eyebrow">💌 RSVP</div>
+        <h2 class="section-title">Will You Join Us?</h2>
+        <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
+      </div>
       <div class="peppa-wrap peppa-left"><img src="pic/peppa_5.png" alt="George Pig" class="peppa-char"></div>
       <div class="peppa-wrap"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
     </div>
-    <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
 
     <div class="rsvp-card">
       <div id="rsvp-form-wrap">
