@@ -7,10 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --cream: #f7f3ec;
-  --cream-dk: #ede7db;
+  --cream: #dff0f8;
+  --cream-dk: #c8e6f5;
   --text: #1a1a1a;
-  --muted: #7a7060;
+  --muted: #5a6a7a;
   --red: #e8453c;
   --pink: #f4a7b0;
   --yellow: #f5c842;
@@ -19,8 +19,9 @@
   --blue: #5b9bd5;
   --orange: #f07d3a;
   --gold: #c9a84c;
-  --border: #ddd5c5;
+  --border: #b8d8ea;
   --white: #ffffff;
+  --purple: #9B6BB5;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -78,7 +79,7 @@ body::before {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 55%;
-  background: linear-gradient(transparent, var(--cream));
+  background: linear-gradient(transparent, #dff0f8);
 }
 .hero-body {
   position: relative;
@@ -90,10 +91,10 @@ body::before {
   width: 120px; height: 120px;
   border-radius: 50%;
   border: 5px solid var(--white);
-  box-shadow: 0 4px 20px rgba(0,0,0,.12), 0 0 0 3px var(--cream-dk);
+  box-shadow: 0 4px 20px rgba(0,0,0,.12), 0 0 0 3px #c8e6f5;
   overflow: hidden;
   margin: 0 auto 20px;
-  background: var(--cream-dk);
+  background: #c8e6f5;
 }
 .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-tag {
@@ -371,9 +372,10 @@ textarea { resize: vertical; min-height: 80px; }
 }
 #rsvp-success p { color: var(--muted); font-size: 15px; }
 
-/* ── BG ALTERNATION ── */
-.bg-white { background: var(--white); }
-.bg-cream { background: var(--cream-dk); }
+.bg-white { background: #ffffff; }
+.bg-cream { background: #c8e6f5; }
+#hero { background: #dff0f8; }
+#rsvp { background: #dff0f8; }
 
 /* ── FOOTER ── */
 footer {
