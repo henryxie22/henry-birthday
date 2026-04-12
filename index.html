@@ -56,7 +56,7 @@ body::before {
 /* ── HERO ── */
 #hero {
   position: relative;
-  background: linear-gradient(to bottom, #6B3FA0 0%, #9B7CC0 60%, #F8F4FF 100%);
+  background: #F8F4FF;
   text-align: center;
   padding: 0;
   overflow: hidden;
@@ -79,7 +79,7 @@ body::before {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 55%;
-  background: linear-gradient(transparent, #9B7CC0);
+  background: linear-gradient(transparent, #F8F4FF);
 }
 .hero-body {
   position: relative;
@@ -91,7 +91,7 @@ body::before {
   width: 120px; height: 120px;
   border-radius: 50%;
   border: 5px solid var(--white);
-  box-shadow: 0 4px 20px rgba(0,0,0,.12), 0 0 0 3px #EDE7F6;
+  box-shadow: 0 4px 20px rgba(107,63,160,.2), 0 0 0 3px #EDE7F6;
   overflow: hidden;
   margin: 0 auto 20px;
   background: #EDE7F6;
@@ -112,18 +112,29 @@ body::before {
   font-weight: 800;
   font-size: clamp(2.4rem, 9vw, 3.8rem);
   color: #9B7CC0;
-  line-height: 1.05;
+  line-height: 1.1;
   margin-bottom: 14px;
-  letter-spacing: -0.5px;
 }
-#hero h1 em {
-  font-style: normal;
+#hero h1 .hero-name {
+  display: block;
+  color: #F5C842;
+  text-shadow: 2px 3px 0px rgba(107,63,160,0.25);
+}
+#hero h1 .hero-turning {
+  display: block;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: #9B7CC0;
+  font-weight: 700;
+}
+#hero h1 .hero-age {
   font-family: 'Architects Daughter', cursive;
   color: #F5C842;
+  font-size: clamp(3rem, 12vw, 5rem);
+  line-height: 1;
+  text-shadow: 2px 3px 0px rgba(107,63,160,0.2);
   display: inline-block;
   transform: rotate(3deg);
-  font-size: clamp(2.8rem, 10vw, 4.2rem);
-  text-shadow: 2px 3px 0px rgba(107,63,160,0.2);
+  font-weight: 400;
 }
 .hero-divider {
   display: flex; align-items: center; justify-content: center; gap: 12px;
@@ -134,7 +145,7 @@ body::before {
   content: '';
   flex: 1; max-width: 60px;
   height: 1.5px;
-  background: var(--border);
+  background: #7BA7C7;
 }
 .hero-date {
   font-family: 'Nunito', sans-serif;
@@ -142,7 +153,7 @@ body::before {
   font-size: clamp(0.85rem, 2.5vw, 1rem);
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #EDE7F6;
+  color: #7BA7C7;
   line-height: 2;
 }
 
@@ -483,7 +494,7 @@ footer a:hover { text-decoration: underline; }
       <img id="henry-photo" src="pic/henry.jpeg" alt="Henry">
     </div>
     <div class="hero-tag">🎉 You're Invited</div>
-    <h1>Henry is<br><em>Turning 4!</em></h1>
+    <h1><span class="hero-name">Henry</span><span class="hero-turning">is turning <span class="hero-age">4</span></span></h1>
     <div class="hero-divider"><span>🎈</span></div>
     <div class="hero-date">
       Thursday, May 7, 2026<br>
@@ -703,10 +714,11 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <img src="pic/peppa_5.png" alt="Peppa Pig" class="footer-peppa">
+  <div style="font-family:'Baloo 2',cursive;font-size:18px;font-weight:600;color:#7BA7C7;margin-bottom:8px;">Come celebrate with <span style="color:#F5C842;">Henry! 🎈</span></div>
   <strong>Henry's 4th Birthday Party</strong><br>
   Thursday, May 7, 2026 · My Little Paris Café & Play<br>
   416 E. Las Tunas Dr, Unit C, San Gabriel, CA 91776<br><br>
-  Questions? Contact <strong>Yanning Cui & Huayang Xie</strong><br>
+  <span style="font-family:'Baloo 2',cursive;font-size:15px;font-weight:600;color:#7BA7C7;">Questions? Contact <span style="color:#F5C842;">Yanning Cui & Huayang Xie</span></span><br>
   <a href="mailto:ycui0011@gmail.com">ycui0011@gmail.com</a>
   <div style="margin-top:18px;font-size:11px;opacity:.3">Made with ❤️ for Henry</div>
 </footer>
