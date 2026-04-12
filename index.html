@@ -34,21 +34,67 @@ body {
   overflow-x: hidden;
 }
 
-/* ── SCATTERED CONFETTI BACKGROUND ── */
+/* ── STAR SPRINKLES ── */
+.sprinkle-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.sprinkle-layer span {
+  position: absolute;
+  font-size: 14px;
+  opacity: 0.25;
+  animation: sprinkle-spin 6s ease-in-out infinite;
+}
+.sprinkle-layer span:nth-child(odd) { animation-duration: 8s; }
+.sprinkle-layer span:nth-child(3n) { animation-duration: 5s; font-size: 10px; }
+@keyframes sprinkle-spin {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(20deg) scale(1.15); }
+}
+
+/* ── SPRINKLES BACKGROUND ── */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(circle, var(--red) 2px, transparent 2px),
-    radial-gradient(circle, var(--yellow) 2px, transparent 2px),
-    radial-gradient(circle, var(--teal) 2px, transparent 2px),
-    radial-gradient(circle, var(--pink) 2px, transparent 2px),
-    radial-gradient(circle, var(--blue) 2px, transparent 2px),
-    radial-gradient(circle, var(--green) 2px, transparent 2px);
-  background-size: 180px 180px, 220px 220px, 160px 160px, 200px 200px, 240px 240px, 190px 190px;
-  background-position: 20px 30px, 80px 90px, 140px 20px, 50px 150px, 110px 60px, 170px 130px;
-  opacity: 0.18;
+    /* yellow stars */
+    radial-gradient(circle, #f5e642 3px, transparent 3px),
+    radial-gradient(circle, #f5e642 2px, transparent 2px),
+    /* pink dots */
+    radial-gradient(circle, #f4b8cc 4px, transparent 4px),
+    radial-gradient(circle, #f4b8cc 2px, transparent 2px),
+    /* blue dots */
+    radial-gradient(circle, #a8c8f0 3px, transparent 3px),
+    radial-gradient(circle, #a8c8f0 2px, transparent 2px),
+    /* green dots */
+    radial-gradient(circle, #a8dbb8 3px, transparent 3px),
+    /* purple dots */
+    radial-gradient(circle, #c9b0e8 4px, transparent 4px),
+    /* orange dots */
+    radial-gradient(circle, #f5c89a 3px, transparent 3px),
+    /* small white sparkles */
+    radial-gradient(circle, rgba(255,255,255,0.6) 2px, transparent 2px);
+  background-size:
+    130px 170px, 200px 140px,
+    160px 200px, 110px 130px,
+    180px 150px, 240px 180px,
+    150px 190px,
+    210px 160px,
+    170px 220px,
+    140px 160px;
+  background-position:
+    15px 40px,   90px 110px,
+    55px 20px,   170px 80px,
+    120px 150px, 30px 170px,
+    80px 60px,
+    190px 30px,
+    60px 130px,
+    140px 90px;
+  opacity: 0.35;
   pointer-events: none;
   z-index: 0;
 }
@@ -539,6 +585,18 @@ footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+<div class="sprinkle-layer" aria-hidden="true">
+  <span style="left:8%;top:12%">⭐</span>
+  <span style="left:88%;top:8%">✨</span>
+  <span style="left:5%;top:35%">🌟</span>
+  <span style="left:92%;top:42%">⭐</span>
+  <span style="left:15%;top:58%">✨</span>
+  <span style="left:82%;top:65%">🌟</span>
+  <span style="left:10%;top:78%">⭐</span>
+  <span style="left:90%;top:80%">✨</span>
+  <span style="left:50%;top:5%">🌟</span>
+  <span style="left:45%;top:92%">⭐</span>
+</div>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
