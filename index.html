@@ -246,16 +246,17 @@ body::before {
 .d-link:hover { border-color: var(--red); }
 
 /* ── FOOD PILLS ── */
-.pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
-.pill-full { grid-column: span 2; }
+.pill-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.pill-full { }
 .pill {
   background: #eef6ff;
   border: 1.5px solid var(--border);
   border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 13px; font-weight: 600;
+  padding: 4px 10px;
+  font-size: 12px; font-weight: 600;
   color: var(--text);
   display: flex; align-items: center; gap: 5px;
+  white-space: nowrap;
 }
 
 /* ── REMINDERS ── */
@@ -497,7 +498,7 @@ footer a:hover { text-decoration: underline; }
   align-items: center;
 }
 .food-peppa {
-  height: 260px;
+  height: 200px;
   width: auto;
   object-fit: contain;
   animation: peppa-bounce-inline 2.8s ease-in-out infinite;
