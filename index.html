@@ -454,12 +454,6 @@ footer a:hover { text-decoration: underline; }
 .peppa-wrap.peppa-7 {
   top: 30%;
 }
-.peppa-wrap.peppa-9 {
-  top: 20%;
-  height: 480px;
-  right: auto;
-  left: 0;
-}
 .peppa-wrap.peppa-6 {
   top: 5%;
   height: 350px;
@@ -488,6 +482,33 @@ footer a:hover { text-decoration: underline; }
   .peppa-wrap.peppa-left { right: 120px; }
   .rsvp-chars .peppa-wrap { height: 300px; }
   .peppa-wrap.peppa-6 { height: 220px; top: 5%; }
+}
+
+/* ── FOOD SECTION TWO-COLUMN ── */
+.food-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 620px;
+}
+.food-char {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.food-peppa {
+  height: 320px;
+  width: auto;
+  object-fit: contain;
+  animation: peppa-bounce-inline 2.8s ease-in-out infinite;
+}
+.food-content {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  .food-inner { gap: 8px; }
+  .food-peppa { height: 180px; }
 }
 
 /* ── INLINE PEPPA (food section) ── */
@@ -574,24 +595,27 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ FOOD ═══════════════ -->
 <section class="section bg-cream reveal">
-  <div class="peppa-wrap peppa-9"><img src="pic/peppa_9.png" alt="Peppa Pig" class="peppa-char"></div>
-  <div class="section-inner">
-    <div class="section-eyebrow">🍽️ Food & Drinks</div>
-    <h2 class="section-title">What's Included</h2>
-    <p class="section-sub">No need to bring food — we've got it all covered!</p>
-    <div class="detail-card">
-      <div class="detail-row" style="border-bottom:none">
-        <div class="d-icon">🎁</div>
-        <div>
-          <div class="d-label">Included with the party</div>
-          <div class="pill-grid">
-            <div class="pill">🍝 Pasta</div>
-            <div class="pill">🥗 Salad</div>
-            <div class="pill">🍋 Lemonade</div>
-            <div class="pill">💧 Water</div>
-            <div class="pill">🧃 Juice pouches for kids</div>
-            <div class="pill">🍰 Dessert</div>
-            <div class="pill">☕ Coffee station</div>
+  <div class="section-inner food-inner">
+    <div class="food-char">
+      <img src="pic/peppa_3.png" alt="Peppa Pig" class="food-peppa">
+    </div>
+    <div class="food-content">
+      <div class="section-eyebrow">🍽️ Food & Drinks</div>
+      <h2 class="section-title">What's Included</h2>
+      <p class="section-sub">No need to bring food — we've got it all covered!</p>
+      <div class="detail-card">
+        <div class="detail-row" style="border-bottom:none">
+          <div>
+            <div class="d-label">Included with the party</div>
+            <div class="pill-grid">
+              <div class="pill">🍝 Pasta</div>
+              <div class="pill">🥗 Salad</div>
+              <div class="pill">🍋 Lemonade</div>
+              <div class="pill">💧 Water</div>
+              <div class="pill">🧃 Juice pouches for kids</div>
+              <div class="pill">🍰 Dessert</div>
+              <div class="pill">☕ Coffee station</div>
+            </div>
           </div>
         </div>
       </div>
