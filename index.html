@@ -143,11 +143,17 @@ body::before {
   margin-bottom: 6px;
 }
 .hero-divider span { font-size: 18px; }
-.hero-divider::before, .hero-divider::after {
+.hero-divider::before {
   content: '';
   flex: 1; max-width: 140px;
   height: 2px;
-  background: #7BA7C7;
+  background: linear-gradient(to right, transparent, #7BA7C7);
+}
+.hero-divider::after {
+  content: '';
+  flex: 1; max-width: 140px;
+  height: 2px;
+  background: linear-gradient(to left, transparent, #7BA7C7);
 }
 .hero-date {
   font-family: 'Nunito', sans-serif;
@@ -448,10 +454,6 @@ footer a:hover { text-decoration: underline; }
 .peppa-wrap.peppa-7 {
   top: 30%;
 }
-.peppa-wrap.peppa-9 {
-  top: 35%;
-  height: 450px;
-}
 .peppa-wrap.peppa-6 {
   top: 5%;
   height: 350px;
@@ -480,6 +482,19 @@ footer a:hover { text-decoration: underline; }
   .peppa-wrap.peppa-left { right: 120px; }
   .rsvp-chars .peppa-wrap { height: 300px; }
   .peppa-wrap.peppa-6 { height: 220px; top: 5%; }
+}
+
+/* ── INLINE PEPPA (food section) ── */
+.inline-peppa {
+  height: 120px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  animation: peppa-bounce-inline 2.8s ease-in-out infinite;
+}
+@keyframes peppa-bounce-inline {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%       { transform: translateY(-6px) rotate(3deg); }
 }
 
 /* ── REVEAL ── */
@@ -553,14 +568,13 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ FOOD ═══════════════ -->
 <section class="section bg-cream reveal">
-  <div class="peppa-wrap peppa-9"><img src="pic/peppa_9.png" alt="Peppa Pig" class="peppa-char"></div>
   <div class="section-inner">
     <div class="section-eyebrow">🍽️ Food & Drinks</div>
     <h2 class="section-title">What's Included</h2>
     <p class="section-sub">No need to bring food — we've got it all covered!</p>
     <div class="detail-card">
-      <div class="detail-row" style="border-bottom:none">
-        <div class="d-icon">🎁</div>
+      <div class="detail-row" style="border-bottom:none; align-items:center;">
+        <img src="pic/peppa_9.png" alt="Peppa Pig" class="inline-peppa">
         <div>
           <div class="d-label">Included with the party</div>
           <div class="pill-grid">
