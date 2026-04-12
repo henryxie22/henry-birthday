@@ -457,7 +457,7 @@ footer a:hover { text-decoration: underline; }
   top: 30%;
 }
 .peppa-wrap.peppa-6 {
-  top: 32%;
+  top: 42%;
   right: auto;
   left: 62%;
   height: 180px;
@@ -496,20 +496,18 @@ footer a:hover { text-decoration: underline; }
   justify-content: flex-end;
 }
 .food-char {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  margin-right: -110px;
-  margin-left: -30px;
-  z-index: 2;
-  position: relative;
+  display: none;
 }
-.food-peppa {
-  height: 160px;
+.food-peppa-abs {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 220px;
   width: auto;
-  object-fit: contain;
+  pointer-events: none;
+  z-index: 2;
   animation: peppa-bounce-inline 2.8s ease-in-out infinite;
-  flex-shrink: 0;
 }
 .food-content {
   flex: 0 0 auto;
@@ -519,9 +517,7 @@ footer a:hover { text-decoration: underline; }
   z-index: 1;
 }
 @media (max-width: 600px) {
-  .food-row { gap: 0; }
-  .food-char { margin-right: -20px; }
-  .food-peppa { height: 100px; }
+  .food-peppa-abs { height: 130px; left: -10px; }
 }
 
 /* ── INLINE PEPPA (food section) ── */
@@ -613,9 +609,7 @@ footer a:hover { text-decoration: underline; }
     <h2 class="section-title">What's Included</h2>
     <p class="section-sub">No need to bring food — we've got it all covered!</p>
     <div class="food-row">
-      <div class="food-char">
-        <img src="pic/peppa_4.png" alt="Peppa Pig" class="food-peppa">
-      </div>
+      <img src="pic/peppa_4.png" alt="Peppa Pig" class="food-peppa-abs">
       <div class="food-content">
         <div class="detail-card">
           <div class="detail-row" style="border-bottom:none">
