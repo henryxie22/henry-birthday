@@ -246,7 +246,8 @@ body::before {
 .d-link:hover { border-color: var(--red); }
 
 /* ── FOOD PILLS ── */
-.pill-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.pill-full { grid-column: span 2; }
 .pill {
   background: #eef6ff;
   border: 1.5px solid var(--border);
@@ -496,7 +497,7 @@ footer a:hover { text-decoration: underline; }
   align-items: center;
 }
 .food-peppa {
-  height: 320px;
+  height: 260px;
   width: auto;
   object-fit: contain;
   animation: peppa-bounce-inline 2.8s ease-in-out infinite;
@@ -612,7 +613,7 @@ footer a:hover { text-decoration: underline; }
                 <div class="pill">🥗 Salad</div>
                 <div class="pill">🍋 Lemonade</div>
                 <div class="pill">💧 Water</div>
-                <div class="pill">🧃 Juice pouches for kids</div>
+                <div class="pill pill-full">🧃 Juice pouches for kids</div>
                 <div class="pill">🍰 Dessert</div>
                 <div class="pill">☕ Coffee station</div>
               </div>
