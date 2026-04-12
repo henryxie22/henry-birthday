@@ -485,11 +485,10 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* ── FOOD SECTION TWO-COLUMN ── */
-.food-inner {
+.food-row {
   display: flex;
   align-items: center;
   gap: 16px;
-  max-width: 620px;
 }
 .food-char {
   flex-shrink: 0;
@@ -507,8 +506,8 @@ footer a:hover { text-decoration: underline; }
   min-width: 0;
 }
 @media (max-width: 600px) {
-  .food-inner { gap: 8px; }
-  .food-peppa { height: 180px; }
+  .food-row { gap: 8px; }
+  .food-peppa { height: 160px; }
 }
 
 /* ── INLINE PEPPA (food section) ── */
@@ -595,26 +594,28 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ FOOD ═══════════════ -->
 <section class="section bg-cream reveal">
-  <div class="section-inner food-inner">
-    <div class="food-char">
-      <img src="pic/peppa_3.png" alt="Peppa Pig" class="food-peppa">
-    </div>
-    <div class="food-content">
-      <div class="section-eyebrow">🍽️ Food & Drinks</div>
-      <h2 class="section-title">What's Included</h2>
-      <p class="section-sub">No need to bring food — we've got it all covered!</p>
-      <div class="detail-card">
-        <div class="detail-row" style="border-bottom:none">
-          <div>
-            <div class="d-label">Included with the party</div>
-            <div class="pill-grid">
-              <div class="pill">🍝 Pasta</div>
-              <div class="pill">🥗 Salad</div>
-              <div class="pill">🍋 Lemonade</div>
-              <div class="pill">💧 Water</div>
-              <div class="pill">🧃 Juice pouches for kids</div>
-              <div class="pill">🍰 Dessert</div>
-              <div class="pill">☕ Coffee station</div>
+  <div class="section-inner">
+    <div class="section-eyebrow">🍽️ Food & Drinks</div>
+    <h2 class="section-title">What's Included</h2>
+    <p class="section-sub">No need to bring food — we've got it all covered!</p>
+    <div class="food-row">
+      <div class="food-char">
+        <img src="pic/peppa_4.png" alt="Peppa Pig" class="food-peppa">
+      </div>
+      <div class="food-content">
+        <div class="detail-card">
+          <div class="detail-row" style="border-bottom:none">
+            <div>
+              <div class="d-label">Included with the party</div>
+              <div class="pill-grid">
+                <div class="pill">🍝 Pasta</div>
+                <div class="pill">🥗 Salad</div>
+                <div class="pill">🍋 Lemonade</div>
+                <div class="pill">💧 Water</div>
+                <div class="pill">🧃 Juice pouches for kids</div>
+                <div class="pill">🍰 Dessert</div>
+                <div class="pill">☕ Coffee station</div>
+              </div>
             </div>
           </div>
         </div>
