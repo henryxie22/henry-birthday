@@ -246,7 +246,7 @@ body::before {
 .d-link:hover { border-color: var(--red); }
 
 /* ── FOOD PILLS ── */
-.pill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 12px; }
+.pill-grid { display: grid; grid-template-columns: auto auto; gap: 6px; margin-top: 12px; justify-content: start; }
 .pill-full { grid-column: span 2; }
 .pill {
   background: #eef6ff;
@@ -498,16 +498,15 @@ footer a:hover { text-decoration: underline; }
   align-items: center;
 }
 .food-peppa {
-  height: 180px;
+  height: 240px;
   width: auto;
   object-fit: contain;
   animation: peppa-bounce-inline 2.8s ease-in-out infinite;
   flex-shrink: 0;
 }
 .food-content {
-  flex: 1;
+  flex: 0 0 auto;
   min-width: 0;
-  max-width: 65%;
   overflow: hidden;
 }
 @media (max-width: 600px) {
