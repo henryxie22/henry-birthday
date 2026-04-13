@@ -489,8 +489,8 @@ footer a:hover { text-decoration: underline; }
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 130px;
-  height: auto;
+  height: 500px;
+  width: auto;
   pointer-events: none;
   z-index: 3;
   animation: peppa-float 2.8s ease-in-out infinite;
@@ -501,18 +501,20 @@ footer a:hover { text-decoration: underline; }
 }
 .peppa-wrap.peppa-7 {
   top: 30%;
+  height: 550px;
 }
 .peppa-wrap.peppa-6 {
   top: 10%;
   right: auto;
   left: 62%;
+  height: 180px;
 }
 .peppa-wrap.peppa-1 {
   top: 3%;
 }
 .peppa-char {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
   display: block;
 }
 /* RSVP two Georges — same as other sections */
@@ -527,17 +529,16 @@ footer a:hover { text-decoration: underline; }
   50%       { transform: translateY(-8px) rotate(3deg); }
 }
 @media (max-width: 600px) {
-  .peppa-wrap { height: 300px; width: auto; }
-  .peppa-wrap.peppa-7 { height: 330px; width: auto; }
+  .peppa-wrap { height: 300px; }
+  .peppa-wrap.peppa-7 { height: 330px; }
   .peppa-wrap.peppa-left { right: 120px; }
-  .rsvp-chars .peppa-wrap { height: 300px; width: auto; }
-  .peppa-wrap.peppa-6 { height: 150px; width: auto; top: 10%; left: 62%; right: auto; }
-  .food-peppa-abs { height: 130px; width: auto; left: 10px; }
+  .rsvp-chars .peppa-wrap { height: 300px; }
+  .peppa-wrap.peppa-6 { height: 150px; top: 10%; left: 62%; right: auto; }
 }
 @media (min-width: 601px) {
-  .peppa-wrap.peppa-7 { width: 180px; }
-  .peppa-wrap.peppa-1 { width: 180px; }
-  .food-peppa-abs { width: 70px; height: auto; }
+  .peppa-wrap.peppa-7 { height: 220px; }
+  .peppa-wrap.peppa-1 { height: 220px; }
+  .food-peppa-abs { height: 120px; }
 }
 
 /* ── FOOD SECTION TWO-COLUMN ── */
@@ -555,8 +556,8 @@ footer a:hover { text-decoration: underline; }
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 100px;
-  height: auto;
+  height: 220px;
+  width: auto;
   pointer-events: none;
   z-index: 2;
   animation: peppa-bounce-inline 2.8s ease-in-out infinite;
@@ -569,7 +570,7 @@ footer a:hover { text-decoration: underline; }
   z-index: 1;
 }
 @media (max-width: 600px) {
-  .food-peppa-abs { width: 80px; height: auto; left: 10px; }
+  .food-peppa-abs { height: 130px; left: 10px; }
 }
 
 /* ── INLINE PEPPA (food section) ── */
