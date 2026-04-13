@@ -584,6 +584,12 @@ footer a:hover { text-decoration: underline; }
 /* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* ── DESKTOP ONLY: anchor characters to section-inner content box ── */
+@media (min-width: 601px) {
+  .section-inner { position: relative; }
+  .section-inner > .peppa-wrap { position: absolute; }
+}
 </style>
 </head>
 <body>
@@ -619,8 +625,8 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ DETAILS ═══════════════ -->
 <section class="section bg-white reveal">
-  <div class="peppa-wrap peppa-7"><img src="pic/peppa_7.png" alt="Peppa Pig" class="peppa-char"></div>
   <div class="section-inner">
+    <div class="peppa-wrap peppa-7"><img src="pic/peppa_7.png" alt="Peppa Pig" class="peppa-char"></div>
     <div class="section-eyebrow">📋 The Details</div>
     <h2 class="section-title">Party Info</h2>
     <p class="section-sub">Everything you need to know before you arrive</p>
@@ -696,8 +702,8 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ REMINDERS ═══════════════ -->
 <section class="section bg-white reveal">
-  <div class="peppa-wrap peppa-6"><img src="pic/peppa_2.png" alt="Peppa Pig" class="peppa-char"></div>
   <div class="section-inner">
+    <div class="peppa-wrap peppa-6"><img src="pic/peppa_2.png" alt="Peppa Pig" class="peppa-char"></div>
     <div class="section-eyebrow">📌 Heads Up</div>
     <h2 class="section-title">Good to Know</h2>
     <p class="section-sub">A few things before you arrive</p>
@@ -740,8 +746,8 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ═══════════════ RSVP ═══════════════ -->
 <section class="section" id="rsvp">
-  <div class="peppa-wrap peppa-1"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
   <div class="section-inner">
+    <div class="peppa-wrap peppa-1"><img src="pic/peppa_1.png" alt="George Pig" class="peppa-char"></div>
     <div class="section-eyebrow">💌 RSVP</div>
     <h2 class="section-title">Will You Join Us?</h2>
     <p class="section-sub">Please respond by <strong>April 24, 2026</strong> 🐾</p>
